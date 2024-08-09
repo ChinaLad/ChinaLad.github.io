@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinalad | Fluid Particle Simulation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="navigation">
+        <div><a href="Home.html">Chinalad</a></div>
+        <div><a href="#Biography">Biography</a></div>
+        <div><a href="Projects.html">Projects</a></div>
+    </section>
+
+    <section style="background-color: #0a100d; min-height: 600px;" class=" dark-section">
+        <div style="padding: 20px 5% 0 5%;">
+            <h1 class="page-title">Fluid Particle Simulation</h1>
+            <div style="display: flex; flex-direction: column;">
+                <h2 style="color: #cbcbcb;">Pressure</h2>
+                <div style="display: flex; flex-direction: row; flex: 1; align-items: center;">
+                    <p style="padding: 0 5% 0 5%; color: #cbcbcb; width: 30%;">
+                        Particles in fluid like to stay together while also having some distance between each other. 
+                        That means there must be some attraction force between the particles, but there must also be a repulsion force 
+                        so the particles have some distance between them.
+                        <br>
+                        <br>
+                        That means initially, the attraction force is larger and as the particles get closer, the repulsion force 
+                        increases faster than the attraction force and at some point becomes larger.
+                    </p>
+
+                    <figure>
+                        <img class="image" style="width: 600px;" src="fpSim.gif">
+                    </figure>
+                </div>
+
+                <h2 style="color: #cbcbcb;">Viscosity</h2>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <p style="padding: 0 5% 0 5%; color: #cbcbcb; width: 30%;">
+                        Viscosity in a real fluid represents its resistance to deformation or flow. It determines how "thick" or "sticky" the fluid is. 
+                        Viscosity can make a big difference: think of the difference between honey and water.
+                        <br>
+                        <br>
+                        In the simulation, viscosity is modeled by adjusting particle velocities based on their relative motion, 
+                        which helps replicate the internal friction present in real fluids. This ensures that the simulated fluid 
+                        exhibits realistic flow behaviors, such as slowing down as it moves or resisting rapid deformation.
+                    </p>
+
+                </div>
+
+                <h2 style="color: #cbcbcb;">Elasticity and Plasticity</h2>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <p style="padding: 0 5% 0 5%; color: #cbcbcb; width: 30%;">
+                        Elasticity refers to a fluid's ability to return to its original shape after deformation, while plasticity is the 
+                        fluid's ability to undergo permanent deformation. Some fluids may retain some shape (like mud).
+                        <br>
+                        <br>
+                        In the simulation, these properties are represented by spring-like 
+                        forces between particles that adjust based on their positions. There is spring displacement and adjustment of the 
+                        springs.
+                        <br>
+                        <br>
+                        The spring displacement is responsible for the elastic properties of the fluid. It displaces the particles based 
+                        on the resting lenght of the spring, the current lenght, and the srping coefficient.
+                        <br>
+                        <br>
+                        The spring adjustment is responsible for the plastic properties of the fluid. When the spring length exceeds a certain 
+                        threshold, the resting length of the string is adjusted a little bit, so part of the deformation is retained.
+                    </p>
+
+                    <figure>
+                        <img class="image" style="width: 600px;" src="fpSimSpring.png">
+                    </figure>
+                </div>
+
+                <h2 style="color: #cbcbcb;">Optimization</h2>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <p style="padding: 0 5% 0 5%; color: #cbcbcb; width: 30%;">
+                        Naturally, a water molecule doesn't directly affect another water molecule that is 1km away from it. 
+                        That is why all the above formulas use a constant that represents a radius of effect. 
+                        If the distance between two particles exceedss this radius, then the forces between these particles will be 0.  
+                        <br>
+                        <br>
+                        There is no force between distant particles, but the computations will still be done for the pair. 
+                        With just a few particles in the simulation, the number of computations can get massive. That is why by dividing 
+                        the simulation space into a grid can reduce the number of computations. For each particle we find its cell and the cells neighbouring it 
+                        and we make calculationw with the particles in these 9 cells.
+                    </p>
+
+                    <figure>
+                        <img class="image" style="width: 600px;" src="fpOptim.png">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: rgb(63, 124, 172); min-height: 800px;" class="sec">
+        <div class="waves-dark">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <h1 style="padding: 0 5% 0 5%;">Gallery</h1>
+        <div class="gallery">
+            <figure class="gallery-item gallery-item-1">
+                <img class="image" src="FPSim/fps1.png">
+            </figure>
+
+            <figure class="gallery-item gallery-item-2">
+                <img class="image" src="FPSim/fps2.png">
+            </figure>
+
+            <figure class="gallery-item gallery-item-3">
+                <img class="image" src="FPSim/fps3.png">
+            </figure>
+
+            <figure class="gallery-item gallery-item-4">
+                <img class="image" src="FPSim/fps4.png">
+            </figure>
+        </div>
+        
+    </section>
+
+    <section style="background-color: #d6d5c9; max-height: 200px; min-height: 600px;"
+        class="sec">
+        <div class="waves-fpsim">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <h1 style="padding: 0 5% 0 5%;">Creation Process</h1>
+
+        <ul style="padding: 0 5% 0 5%;">
+            <li>Prepare the GUI for the simulator.</li>
+            <li>Created a particle obect with fields like mass, radius, position, and velocity.</li>
+            <li></li>
+        </ul>
+    </section>
+
+    <section style="background-color: #0a100d; padding-bottom: 100px; min-height: 100px;">
+        <div class="waves-footer">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <p style="padding: 0 5% 0 5%; color: #cbcbcb;"></p>
+    </section>
+</body>
+
+</html>
+
+<style>
+    .sec {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home:hover {
+        font-weight: 900;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .proj {
+        width: 500px;
+        height: 300px;
+    }
+
+    .page-title {
+        color: #cbcbcb;
+        transition: 200ms;
+    }
+
+    .page-title:hover {
+        color: rgb(97, 123, 216);
+    }
+
+    .waves-fpsim {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .waves-fpsim svg {
+        position: relative;
+        display: block;
+        width: calc(167% + 1.3px);
+        height: 137px;
+    }
+
+    .waves-fpsim .shape-fill {
+        fill: rgb(63, 124, 172);
+    }
+
+    .waves-footer {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .waves-footer svg {
+        position: relative;
+        display: block;
+        width: calc(167% + 1.3px);
+        height: 39px;
+    }
+
+    .waves-footer .shape-fill {
+        fill: #d6d5c9;
+    }
+
+    .waves-dark {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .waves-dark svg {
+        position: relative;
+        display: block;
+        width: calc(167% + 1.3px);
+        height: 60px;
+    }
+
+    .waves-dark .shape-fill {
+        fill: #0a100d;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 5vw);
+        grid-gap: 15px;
+        padding: 0 5% 0 5%;
+    }
+
+    .gallery-item-1{
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 5;
+        grid-row-end: 5;
+    }
+
+    .gallery-item-2{
+        grid-column-start: 5;
+        grid-row-start: 1;
+        grid-column-end: 9;
+        grid-row-end: 5;
+    }
+
+    .gallery-item-3{
+        grid-column-start: 1;
+        grid-row-start: 5;
+        grid-column-end: 5;
+        grid-row-end: 9;
+    }
+
+    .gallery-item-4{
+        grid-column-start: 5;
+        grid-row-start: 5;
+        grid-column-end: 9;
+        grid-row-end: 9;
+    }
+
+    .image{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+</style>
