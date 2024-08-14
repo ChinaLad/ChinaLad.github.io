@@ -212,13 +212,14 @@ a {
         align-items: start;
     }
     
-    .content-section-text {
+    .content-section-text{
         padding: 0 5% 0 5%;
         color: #cbcbcb;
         width: 100%;
     }
     
     .content-section-img {
-        width: 600px;
+        width: 100%;
+        padding: 0 5% 0 5%;
     }
 }
