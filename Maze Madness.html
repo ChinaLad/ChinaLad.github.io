@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavel Nikolov | Maze Madness</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <!--Navigation tab-->
+        <section class="navigation">
+            <div><a href="index.html">Pavel Nikolov</a></div>
+            <div class="dropdown">
+                <a class="dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a href="Fluid Particle Simulator.html">Fluid simulation</a>
+                    <a href="Golf.html">Golf</a>
+                    <a href="Natural Selection.html">Natural selection</a>
+                    <a href="Maze Madness.html">Maze Madness</a>
+                </div>
+            </div>
+        </section>
+
+        <!--Introduction section-->
+        <section class=" dark-intro">
+            <div>
+                <h1 style="transition: 200ms;">Maze Madness</h1>
+                <div style="display: flex; flex-direction: column;">
+                    <h2>Maze Generation</h2>
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">DFS</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Kruskal's algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+                            The idea of this method of generation is to use the walls of the maze. We start with a maze
+                            with walls placed everywhere. We place every cell in its own set of cells. We randomly pick
+                            a wall, remove it and union the set of cells on the left and the right of the wall. A wall
+                            is removed only when the sets on the left and the right are disjoint.
+                        </p>
+
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Prim's algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Recursive algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+                            We start with no walls in the maze. We split it into 4 segments by placing one vertical and
+                            one horizontal wall from across the whole maze. We make 3 holes in the wall (there can be
+                            more than 1 wall connecting two of the segments). We recursivelly divide the grid as much as
+                            we can and make these holes like we didi for the first split.
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Wilson's algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+                            We set a random cell as a part of the maze. We pick a random cell and do a random walk until
+                            we reach a cell that is part of the maze. Then we make the path into a coridor of the maze
+                            and all the cells along the path become part of the maze. Then we continue picking random
+                            cells and doing random walks until there are no cells left.
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Aldous-Broder algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <h2>Maze Solvers</h2>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">BFS</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">DFS</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Dijkstra's algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">A* algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+
+                    <!--Section-->
+                    <h3 style="color: #cbcbcb;">Hand on the right algorithm</h3>
+                    <div class="content-section">
+                        <p class="content-section-text">
+
+                        </p>
+
+                        <figure>
+                            <img class="content-section-img" src="Maze Madness/default.png">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Gallery section-->
+        <section style="background-color: var(--main-color); min-height: 800px;" class="sec">
+            <div class="dark-intro-waves">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        opacity=".25" style="fill: var(--dark-background);"></path>
+                    <path
+                        d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                        opacity=".5" style="fill: var(--dark-background);"></path>
+                    <path
+                        d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                        style="fill: var(--dark-background);"></path>
+                </svg>
+            </div>
+
+            <h1 style="padding: 0 5% 0 5%;">Gallery</h1>
+            <div class="gallery">
+                <figure class="gallery-item gallery-item-1">
+                    <img class="image" src="Maze Madness/mmDFS.png">
+                </figure>
+
+                <figure class="gallery-item gallery-item-2">
+                    <img class="image" src="Maze Madness/mmKruskal.png">
+                </figure>
+
+                <figure class="gallery-item gallery-item-3">
+                    <img class="image" src="Maze Madness/mmRecursive.png">
+                </figure>
+
+                <figure class="gallery-item gallery-item-4">
+                    <img class="image" src="Maze Madness/mmWilson.png">
+                </figure>
+            </div>
+        </section>
+
+        <section style="background-color: #d6d5c9; max-height: 200px; min-height: 600px;" class="sec">
+            <div class="gallery-waves">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        opacity=".25" style="fill: var(--main-color);"></path>
+                    <path
+                        d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                        opacity=".5" style="fill: var(--main-color);"></path>
+                    <path
+                        d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                        style="fill: var(--main-color);"></path>
+                </svg>
+            </div>
+
+            <h1 style="padding: 0 5% 0 5%;">Creation Process</h1>
+            <p style="padding: 0 5% 0 5%;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere vitae, natus
+                quam labore atque tempore placeat reprehenderit libero sint assumenda exercitationem molestias optio
+                repellendus dolore similique maiores commodi quaerat explicabo?</p>
+        </section>
+
+        <!--Footer section-->
+        <section class="footer">
+            <!--Footer waves-->
+            <div class="footer-waves">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        opacity=".25" style="fill: var(--light-background-primary)"></path>
+                    <path
+                        d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                        opacity=".5" style="fill: var(--light-background-primary)"></path>
+                    <path
+                        d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                        style="fill: var(--light-background-primary)"></path>
+                </svg>
+            </div>
+
+            <p style="font-size: small;">©2024-2025, Pavel Nikolov. All rights reserved.</p>
+        </section>
+    </div>
+
+    <a href="#" class="top" style="background: var(--accent-color);"></a>
+</body>
+
+</html>
+
+<style>
+
+
+    :root {
+        --main-color: #88527f;
+        --accent-color: #9f87af;
+        scroll-behavior: smooth;
+    }
+
+    .sec {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home:hover {
+        font-weight: 900;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dark-intro h1:hover {
+        color: var(--accent-color);
+    }
+
+    .gallery-item-1 {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 3;
+        grid-row-end: 5;
+    }
+
+    .gallery-item-2 {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-column-end: 5;
+        grid-row-end: 5;
+    }
+
+    .gallery-item-3 {
+        grid-column-start: 5;
+        grid-row-start: 1;
+        grid-column-end: 7;
+        grid-row-end: 5;
+    }
+
+    .gallery-item-4 {
+        grid-column-start: 7;
+        grid-row-start: 1;
+        grid-column-end: 9;
+        grid-row-end: 5;
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+</style>
