@@ -42,6 +42,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-size: larger;
+}
+
 /* Navigation bar */
 .navigation {
     background-color: var(--dark-background);

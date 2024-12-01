@@ -13,7 +13,7 @@
     <div>
         <!--Navigation tab-->
         <section class="navigation">
-            <div><a href="index.html">Pavel Nikolov</a></div>
+            <div><a href="index.html">Home</a></div>
             <div class="dropdown">
                 <a class="dropbtn">Projects</a>
                 <div class="dropdown-content">
@@ -26,149 +26,97 @@
         </section>
 
         <!--Introduction section-->
-        <section class=" dark-intro">
+        <section class="dark-intro">
             <div>
                 <h1 style="transition: 200ms;">Maze Madness</h1>
                 <div style="display: flex; flex-direction: column;">
                     <h2>Maze Generation</h2>
                     <!--Section-->
-                    <h3 style="color: #cbcbcb;">DFS</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">DFS</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/mmDFS.png">
+                            </figure>
+                        </div>
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Kruskal's algorithm</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/mmKruskal.png">
+                            </figure>
+                        </div>
                     </div>
 
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Kruskal's algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-                            The idea of this method of generation is to use the walls of the maze. We start with a maze
-                            with walls placed everywhere. We place every cell in its own set of cells. We randomly pick
-                            a wall, remove it and union the set of cells on the left and the right of the wall. A wall
-                            is removed only when the sets on the left and the right are disjoint.
-                        </p>
-
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Prim's algorithm</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/mmPrim.png">
+                            </figure>
+                        </div>
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Recursive algorithm</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/mmRecursive.png">
+                            </figure>
+                        </div>
                     </div>
 
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Prim's algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
-                    </div>
-
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Recursive algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-                            We start with no walls in the maze. We split it into 4 segments by placing one vertical and
-                            one horizontal wall from across the whole maze. We make 3 holes in the wall (there can be
-                            more than 1 wall connecting two of the segments). We recursivelly divide the grid as much as
-                            we can and make these holes like we didi for the first split.
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
-                    </div>
-
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Wilson's algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-                            We set a random cell as a part of the maze. We pick a random cell and do a random walk until
-                            we reach a cell that is part of the maze. Then we make the path into a coridor of the maze
-                            and all the cells along the path become part of the maze. Then we continue picking random
-                            cells and doing random walks until there are no cells left.
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
-                    </div>
-
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Aldous-Broder algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Wilson's algorithm</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/mmWilson.png">
+                            </figure>
+                        </div>
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Aldous-Broder algorithm</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/mmRecursive.png">
+                            </figure>
+                        </div>
                     </div>
 
                     <h2>Maze Solvers</h2>
 
                     <!--Section-->
-                    <h3 style="color: #cbcbcb;">BFS</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">BFS </h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/sBFS.png">
+                            </figure>
+                        </div>
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">DFS</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/sDFS.png">
+                            </figure>
+                        </div>
                     </div>
 
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">DFS</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Dijkstra's algorithm</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/sDijkstra.png">
+                            </figure>
+                        </div>
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">A*</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/sAStar.png">
+                            </figure>
+                        </div>
                     </div>
 
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Dijkstra's algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
-                    </div>
-
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">A* algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
-                    </div>
-
-                    <!--Section-->
-                    <h3 style="color: #cbcbcb;">Hand on the right algorithm</h3>
-                    <div class="content-section">
-                        <p class="content-section-text">
-
-                        </p>
-
-                        <figure>
-                            <img class="content-section-img" src="Maze Madness/default.png">
-                        </figure>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="padding: 0;">
+                            <h3 style="color: #cbcbcb;">Right hand method</h3>
+                            <figure>
+                                <img style = "width: 600px;" src="Maze Madness/sRightHand.png">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
