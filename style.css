@@ -12,10 +12,17 @@
     --border: #585858;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .full-screen-intro {
@@ -28,7 +35,9 @@ html {
 body {
     height: auto;
     min-height: 100vh;
-    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
     overflow-y: auto;
     margin: 0;
     padding: 0;
