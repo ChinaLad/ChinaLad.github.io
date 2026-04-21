@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="432pt" viewBox="0 0 720 432" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-04-20T23:36:14.291713</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 432 
+L 720 432 
+L 720 0 
+L 0 0 
+L 0 432 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 49.88 394 
+L 709.2 394 
+L 709.2 40.88 
+L 49.88 40.88 
+L 49.88 394 
+z
+" style="fill: none"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mc54ca4a54a" d="M 0 0 
+L 0 3.5 
+" style="stroke: #ffffff; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="117.934811" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 2000 -->
+      <g style="fill: #ffffff" transform="translate(108.334811 406.68) scale(0.08 -0.08)">
+       <defs>
+        <path id="GeistMono-Regular-32" d="M 320 0 
+Q 320 480 470 867 
+Q 621 1254 1001 1606 
+Q 1382 1958 2061 2317 
+Q 2374 2483 2566 2624 
+Q 2758 2765 2848 2925 
+Q 2938 3085 2938 3315 
+Q 2938 3552 2835 3728 
+Q 2733 3904 2531 4006 
+Q 2330 4109 2029 4109 
+Q 1549 4109 1270 3859 
+Q 992 3610 922 3149 
+L 346 3187 
+Q 422 3853 857 4249 
+Q 1293 4646 2029 4646 
+Q 2496 4646 2829 4480 
+Q 3162 4314 3338 4016 
+Q 3514 3718 3514 3328 
+Q 3514 2982 3398 2729 
+Q 3283 2477 3011 2259 
+Q 2739 2042 2266 1792 
+Q 1856 1574 1577 1350 
+Q 1299 1126 1155 918 
+Q 1011 710 998 538 
+L 3520 538 
+L 3520 0 
+L 320 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="GeistMono-Regular-30" d="M 768 653 
+L 2560 3917 
+L 3072 3891 
+L 1280 627 
+L 768 653 
+z
+M 1920 -102 
+Q 1427 -102 1065 186 
+Q 704 474 512 1005 
+Q 320 1536 320 2266 
+Q 320 3002 512 3533 
+Q 704 4064 1065 4355 
+Q 1427 4646 1920 4646 
+Q 2419 4646 2777 4355 
+Q 3136 4064 3328 3533 
+Q 3520 3002 3520 2266 
+Q 3520 1536 3328 1005 
+Q 3136 474 2777 186 
+Q 2419 -102 1920 -102 
+z
+M 1920 435 
+Q 2240 435 2467 659 
+Q 2694 883 2819 1296 
+Q 2944 1709 2944 2266 
+Q 2944 2835 2819 3248 
+Q 2694 3661 2467 3885 
+Q 2240 4109 1920 4109 
+Q 1606 4109 1376 3885 
+Q 1146 3661 1021 3248 
+Q 896 2835 896 2266 
+Q 896 1709 1021 1296 
+Q 1146 883 1376 659 
+Q 1606 435 1920 435 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#GeistMono-Regular-32"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="195.979318" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 4000 -->
+      <g style="fill: #ffffff" transform="translate(186.379318 406.68) scale(0.08 -0.08)">
+       <defs>
+        <path id="GeistMono-Regular-34" d="M 2483 0 
+L 2483 986 
+L 256 986 
+L 256 1485 
+L 2445 4544 
+L 3034 4544 
+L 3034 1523 
+L 3584 1523 
+L 3584 986 
+L 3034 986 
+L 3034 0 
+L 2483 0 
+z
+M 819 1523 
+L 2483 1523 
+L 2483 3776 
+L 819 1523 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#GeistMono-Regular-34"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="274.023826" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 6000 -->
+      <g style="fill: #ffffff" transform="translate(264.423826 406.68) scale(0.08 -0.08)">
+       <defs>
+        <path id="GeistMono-Regular-36" d="M 1933 -102 
+Q 1421 -102 1059 131 
+Q 698 365 509 819 
+Q 320 1274 320 1920 
+Q 320 2483 413 2976 
+Q 506 3469 714 3843 
+Q 922 4218 1264 4432 
+Q 1606 4646 2112 4646 
+Q 2515 4646 2796 4512 
+Q 3078 4378 3254 4134 
+Q 3430 3891 3520 3571 
+L 2944 3520 
+Q 2867 3789 2678 3949 
+Q 2490 4109 2112 4109 
+Q 1734 4109 1465 3894 
+Q 1197 3680 1046 3251 
+Q 896 2822 883 2176 
+L 768 2202 
+Q 838 2432 1014 2627 
+Q 1190 2822 1449 2940 
+Q 1709 3059 2035 3059 
+Q 2483 3059 2816 2867 
+Q 3149 2675 3334 2326 
+Q 3520 1978 3520 1510 
+Q 3520 1011 3318 649 
+Q 3117 288 2761 93 
+Q 2406 -102 1933 -102 
+z
+M 1946 435 
+Q 2394 435 2669 720 
+Q 2944 1005 2944 1510 
+Q 2944 1984 2685 2259 
+Q 2426 2534 1997 2534 
+Q 1690 2534 1446 2409 
+Q 1203 2285 1062 2054 
+Q 922 1824 922 1510 
+Q 922 1197 1046 953 
+Q 1171 710 1401 572 
+Q 1632 435 1946 435 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#GeistMono-Regular-36"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="352.068333" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 8000 -->
+      <g style="fill: #ffffff" transform="translate(342.468333 406.68) scale(0.08 -0.08)">
+       <defs>
+        <path id="GeistMono-Regular-38" d="M 1920 -102 
+Q 1472 -102 1107 51 
+Q 742 205 531 505 
+Q 320 806 320 1248 
+Q 320 1741 614 2064 
+Q 909 2387 1395 2502 
+L 1408 2374 
+Q 1018 2483 778 2729 
+Q 538 2976 538 3398 
+Q 538 3757 717 4038 
+Q 896 4320 1206 4483 
+Q 1517 4646 1920 4646 
+Q 2323 4646 2636 4483 
+Q 2950 4320 3126 4038 
+Q 3302 3757 3302 3398 
+Q 3302 2976 3065 2729 
+Q 2829 2483 2432 2374 
+L 2445 2502 
+Q 2938 2387 3229 2064 
+Q 3520 1741 3520 1248 
+Q 3520 806 3309 505 
+Q 3098 205 2736 51 
+Q 2374 -102 1920 -102 
+z
+M 1920 435 
+Q 2368 435 2656 643 
+Q 2944 851 2944 1280 
+Q 2944 1677 2688 1917 
+Q 2432 2157 1920 2157 
+Q 1414 2157 1155 1917 
+Q 896 1677 896 1280 
+Q 896 851 1184 643 
+Q 1472 435 1920 435 
+z
+M 1920 2669 
+Q 2285 2669 2505 2851 
+Q 2726 3034 2726 3398 
+Q 2726 3725 2512 3917 
+Q 2298 4109 1920 4109 
+Q 1549 4109 1331 3917 
+Q 1114 3725 1114 3398 
+Q 1114 3034 1334 2851 
+Q 1555 2669 1920 2669 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#GeistMono-Regular-38"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="430.112841" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 10000 -->
+      <g style="fill: #ffffff" transform="translate(418.112841 406.68) scale(0.08 -0.08)">
+       <defs>
+        <path id="GeistMono-Regular-31" d="M 1818 0 
+L 1818 3366 
+L 627 3366 
+L 627 3840 
+L 1242 3840 
+Q 1485 3840 1635 3910 
+Q 1786 3981 1853 4134 
+Q 1920 4288 1920 4544 
+L 2368 4544 
+L 2368 0 
+L 1818 0 
+z
+M 384 0 
+L 384 538 
+L 3456 538 
+L 3456 0 
+L 384 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#GeistMono-Regular-31"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(239.999939 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="508.157348" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 12000 -->
+      <g style="fill: #ffffff" transform="translate(496.157348 406.68) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-31"/>
+       <use xlink:href="#GeistMono-Regular-32" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(239.999939 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="586.201856" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 14000 -->
+      <g style="fill: #ffffff" transform="translate(574.201856 406.68) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-31"/>
+       <use xlink:href="#GeistMono-Regular-34" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(239.999939 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mc54ca4a54a" x="664.246364" y="394" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 16000 -->
+      <g style="fill: #ffffff" transform="translate(652.246364 406.68) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-31"/>
+       <use xlink:href="#GeistMono-Regular-36" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(239.999939 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_9">
+     <!-- PARTICLE_COUNT (N) -->
+     <g style="fill: #ffffff" transform="translate(325.54 418.98) scale(0.1 -0.1)">
+      <defs>
+       <path id="GeistMono-Regular-50" d="M 576 0 
+L 576 4544 
+L 1958 4544 
+Q 2432 4544 2784 4377 
+Q 3136 4211 3328 3900 
+Q 3520 3590 3520 3155 
+Q 3520 2720 3328 2409 
+Q 3136 2099 2784 1932 
+Q 2432 1766 1958 1766 
+L 1126 1766 
+L 1126 0 
+L 576 0 
+z
+M 1126 2304 
+L 1894 2304 
+Q 2432 2304 2688 2525 
+Q 2944 2746 2944 3155 
+Q 2944 3571 2688 3788 
+Q 2432 4006 1894 4006 
+L 1126 4006 
+L 1126 2304 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-41" d="M 166 0 
+L 1549 4544 
+L 2291 4544 
+L 3674 0 
+L 3085 0 
+L 1920 4045 
+L 755 0 
+L 166 0 
+z
+M 864 1293 
+L 1056 1830 
+L 2784 1830 
+L 2976 1293 
+L 864 1293 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-52" d="M 448 0 
+L 448 4544 
+L 1830 4544 
+Q 2547 4544 2963 4182 
+Q 3379 3821 3379 3187 
+Q 3379 2867 3232 2620 
+Q 3085 2374 2854 2233 
+Q 2624 2093 2381 2074 
+L 2355 2150 
+Q 2810 2125 3037 1933 
+Q 3264 1741 3302 1306 
+L 3418 0 
+L 2867 0 
+L 2758 1235 
+Q 2739 1446 2659 1577 
+Q 2579 1709 2409 1769 
+Q 2240 1830 1946 1830 
+L 998 1830 
+L 998 0 
+L 448 0 
+z
+M 998 2368 
+L 1830 2368 
+Q 2304 2368 2553 2582 
+Q 2803 2797 2803 3187 
+Q 2803 3584 2553 3795 
+Q 2304 4006 1830 4006 
+L 998 4006 
+L 998 2368 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-54" d="M 1645 0 
+L 1645 4006 
+L 256 4006 
+L 256 4544 
+L 3584 4544 
+L 3584 4006 
+L 2195 4006 
+L 2195 0 
+L 1645 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-49" d="M 512 0 
+L 512 538 
+L 1645 538 
+L 1645 4006 
+L 512 4006 
+L 512 4544 
+L 3328 4544 
+L 3328 4006 
+L 2195 4006 
+L 2195 538 
+L 3328 538 
+L 3328 0 
+L 512 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-43" d="M 1933 -102 
+Q 1389 -102 1011 186 
+Q 634 474 438 1005 
+Q 243 1536 243 2266 
+Q 243 3002 438 3533 
+Q 634 4064 1011 4355 
+Q 1389 4646 1933 4646 
+Q 2534 4646 2956 4252 
+Q 3379 3859 3520 3155 
+L 2931 3117 
+Q 2822 3610 2556 3859 
+Q 2291 4109 1933 4109 
+Q 1568 4109 1321 3894 
+Q 1075 3680 947 3267 
+Q 819 2854 819 2266 
+Q 819 1683 947 1273 
+Q 1075 864 1321 649 
+Q 1568 435 1933 435 
+Q 2330 435 2605 710 
+Q 2880 986 2976 1530 
+L 3558 1498 
+Q 3437 749 3008 323 
+Q 2579 -102 1933 -102 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-4c" d="M 640 0 
+L 640 4544 
+L 1190 4544 
+L 1190 256 
+L 915 538 
+L 3456 538 
+L 3456 0 
+L 640 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-45" d="M 576 0 
+L 576 4544 
+L 3341 4544 
+L 3341 4006 
+L 1126 4006 
+L 1126 2541 
+L 3264 2541 
+L 3264 2016 
+L 1126 2016 
+L 1126 538 
+L 3392 538 
+L 3392 0 
+L 576 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-5f" d="M 512 -499 
+L 512 0 
+L 3328 0 
+L 3328 -499 
+L 512 -499 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-4f" d="M 1920 -102 
+Q 1382 -102 1008 173 
+Q 634 448 438 979 
+Q 243 1510 243 2266 
+Q 243 3034 438 3565 
+Q 634 4096 1008 4371 
+Q 1382 4646 1920 4646 
+Q 2458 4646 2832 4371 
+Q 3206 4096 3401 3565 
+Q 3597 3034 3597 2266 
+Q 3597 1510 3401 979 
+Q 3206 448 2832 173 
+Q 2458 -102 1920 -102 
+z
+M 1920 435 
+Q 2272 435 2518 643 
+Q 2765 851 2893 1260 
+Q 3021 1670 3021 2266 
+Q 3021 2861 2893 3273 
+Q 2765 3686 2518 3897 
+Q 2272 4109 1920 4109 
+Q 1568 4109 1321 3897 
+Q 1075 3686 947 3273 
+Q 819 2861 819 2266 
+Q 819 1670 947 1260 
+Q 1075 851 1321 643 
+Q 1568 435 1920 435 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-55" d="M 1920 -102 
+Q 1203 -102 793 352 
+Q 384 806 384 1587 
+L 384 4544 
+L 934 4544 
+L 934 1587 
+Q 934 1024 1187 729 
+Q 1440 435 1920 435 
+Q 2400 435 2653 729 
+Q 2906 1024 2906 1587 
+L 2906 4544 
+L 3456 4544 
+L 3456 1587 
+Q 3456 806 3046 352 
+Q 2637 -102 1920 -102 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-4e" d="M 448 0 
+L 448 4544 
+L 1229 4544 
+L 2842 627 
+L 2842 4544 
+L 3392 4544 
+L 3392 0 
+L 2611 0 
+L 998 3917 
+L 998 0 
+L 448 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-20" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-28" d="M 2125 -704 
+Q 1683 -38 1459 656 
+Q 1235 1350 1235 2048 
+Q 1235 3469 2125 4800 
+L 2605 4800 
+Q 1792 3418 1792 2048 
+Q 1792 1363 1997 675 
+Q 2202 -13 2605 -704 
+L 2125 -704 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-29" d="M 1715 -704 
+L 1235 -704 
+Q 1638 -13 1843 675 
+Q 2048 1363 2048 2048 
+Q 2048 3418 1235 4800 
+L 1715 4800 
+Q 2605 3469 2605 2048 
+Q 2605 1350 2381 656 
+Q 2157 -38 1715 -704 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#GeistMono-Regular-50"/>
+      <use xlink:href="#GeistMono-Regular-41" transform="translate(59.999985 0)"/>
+      <use xlink:href="#GeistMono-Regular-52" transform="translate(119.999969 0)"/>
+      <use xlink:href="#GeistMono-Regular-54" transform="translate(179.999954 0)"/>
+      <use xlink:href="#GeistMono-Regular-49" transform="translate(239.999939 0)"/>
+      <use xlink:href="#GeistMono-Regular-43" transform="translate(299.999924 0)"/>
+      <use xlink:href="#GeistMono-Regular-4c" transform="translate(359.999908 0)"/>
+      <use xlink:href="#GeistMono-Regular-45" transform="translate(419.999893 0)"/>
+      <use xlink:href="#GeistMono-Regular-5f" transform="translate(479.999878 0)"/>
+      <use xlink:href="#GeistMono-Regular-43" transform="translate(539.999863 0)"/>
+      <use xlink:href="#GeistMono-Regular-4f" transform="translate(599.999847 0)"/>
+      <use xlink:href="#GeistMono-Regular-55" transform="translate(659.999832 0)"/>
+      <use xlink:href="#GeistMono-Regular-4e" transform="translate(719.999817 0)"/>
+      <use xlink:href="#GeistMono-Regular-54" transform="translate(779.999802 0)"/>
+      <use xlink:href="#GeistMono-Regular-20" transform="translate(839.999786 0)"/>
+      <use xlink:href="#GeistMono-Regular-28" transform="translate(899.999771 0)"/>
+      <use xlink:href="#GeistMono-Regular-4e" transform="translate(959.999756 0)"/>
+      <use xlink:href="#GeistMono-Regular-29" transform="translate(1019.999741 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9">
+      <defs>
+       <path id="m81a5822e75" d="M 0 0 
+L -3.5 0 
+" style="stroke: #ffffff; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m81a5822e75" x="49.88" y="378.071596" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 0 -->
+      <g style="fill: #ffffff" transform="translate(38.08 380.911596) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-30"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m81a5822e75" x="49.88" y="318.254482" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 500 -->
+      <g style="fill: #ffffff" transform="translate(28.48 321.094482) scale(0.08 -0.08)">
+       <defs>
+        <path id="GeistMono-Regular-35" d="M 1907 -102 
+Q 1466 -102 1136 58 
+Q 806 218 611 506 
+Q 416 794 384 1171 
+L 960 1210 
+Q 1011 826 1264 630 
+Q 1517 435 1907 435 
+Q 2349 435 2614 707 
+Q 2880 979 2880 1459 
+Q 2880 1779 2765 2012 
+Q 2650 2246 2435 2371 
+Q 2221 2496 1920 2496 
+Q 1651 2496 1404 2365 
+Q 1158 2234 1050 1990 
+L 461 1990 
+L 762 4544 
+L 3181 4544 
+L 3181 4006 
+L 1267 4006 
+L 1062 2330 
+L 960 2432 
+Q 1062 2630 1228 2758 
+Q 1395 2886 1596 2953 
+Q 1798 3021 1997 3021 
+Q 2432 3021 2761 2819 
+Q 3091 2618 3273 2266 
+Q 3456 1914 3456 1459 
+Q 3456 1005 3257 649 
+Q 3059 294 2710 96 
+Q 2362 -102 1907 -102 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#GeistMono-Regular-35"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m81a5822e75" x="49.88" y="258.437368" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 1000 -->
+      <g style="fill: #ffffff" transform="translate(23.68 261.277368) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-31"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m81a5822e75" x="49.88" y="198.620253" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- 1500 -->
+      <g style="fill: #ffffff" transform="translate(23.68 201.460253) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-31"/>
+       <use xlink:href="#GeistMono-Regular-35" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m81a5822e75" x="49.88" y="138.803139" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <!-- 2000 -->
+      <g style="fill: #ffffff" transform="translate(23.68 141.643139) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-32"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m81a5822e75" x="49.88" y="78.986025" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <!-- 2500 -->
+      <g style="fill: #ffffff" transform="translate(23.68 81.826025) scale(0.08 -0.08)">
+       <use xlink:href="#GeistMono-Regular-32"/>
+       <use xlink:href="#GeistMono-Regular-35" transform="translate(59.999985 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(119.999969 0)"/>
+       <use xlink:href="#GeistMono-Regular-30" transform="translate(179.999954 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_16">
+     <!-- LATENCY (ms) -->
+     <g style="fill: #ffffff" transform="translate(18.18 253.44) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="GeistMono-Regular-59" d="M 1651 0 
+L 1651 1856 
+L 256 4544 
+L 883 4544 
+L 1920 2419 
+L 2957 4544 
+L 3584 4544 
+L 2202 1856 
+L 2202 0 
+L 1651 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-6d" d="M 256 0 
+L 256 3392 
+L 749 3392 
+L 768 2637 
+L 704 2650 
+Q 762 3027 950 3248 
+Q 1139 3469 1434 3469 
+Q 1734 3469 1897 3251 
+Q 2061 3034 2099 2611 
+L 2035 2611 
+Q 2093 3008 2294 3238 
+Q 2496 3469 2803 3469 
+Q 3213 3469 3398 3187 
+Q 3584 2906 3584 2253 
+L 3584 0 
+L 3046 0 
+L 3046 2176 
+Q 3046 2630 2950 2812 
+Q 2854 2995 2650 2995 
+Q 2515 2995 2412 2908 
+Q 2310 2822 2249 2636 
+Q 2189 2451 2189 2163 
+L 2189 0 
+L 1651 0 
+L 1651 2176 
+Q 1651 2611 1558 2803 
+Q 1466 2995 1254 2995 
+Q 1120 2995 1017 2908 
+Q 915 2822 854 2636 
+Q 794 2451 794 2163 
+L 794 0 
+L 256 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="GeistMono-Regular-73" d="M 1984 -77 
+Q 1542 -77 1222 76 
+Q 902 230 720 489 
+Q 538 749 512 1069 
+L 1075 1107 
+Q 1126 794 1353 614 
+Q 1581 435 1984 435 
+Q 2362 435 2570 544 
+Q 2778 653 2778 883 
+Q 2778 1030 2707 1126 
+Q 2637 1222 2445 1289 
+Q 2253 1357 1882 1421 
+Q 1389 1510 1110 1641 
+Q 832 1773 717 1971 
+Q 602 2170 602 2445 
+Q 602 2739 749 2969 
+Q 896 3200 1184 3334 
+Q 1472 3469 1888 3469 
+Q 2310 3469 2595 3318 
+Q 2880 3168 3046 2921 
+Q 3213 2675 3264 2381 
+L 2701 2342 
+Q 2662 2522 2556 2659 
+Q 2451 2797 2281 2877 
+Q 2112 2957 1882 2957 
+Q 1510 2957 1331 2809 
+Q 1152 2662 1152 2445 
+Q 1152 2272 1235 2169 
+Q 1318 2067 1504 2006 
+Q 1690 1946 1997 1894 
+Q 2522 1811 2810 1680 
+Q 3098 1549 3213 1357 
+Q 3328 1165 3328 883 
+Q 3328 582 3152 368 
+Q 2976 154 2672 38 
+Q 2368 -77 1984 -77 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#GeistMono-Regular-4c"/>
+      <use xlink:href="#GeistMono-Regular-41" transform="translate(59.999985 0)"/>
+      <use xlink:href="#GeistMono-Regular-54" transform="translate(119.999969 0)"/>
+      <use xlink:href="#GeistMono-Regular-45" transform="translate(179.999954 0)"/>
+      <use xlink:href="#GeistMono-Regular-4e" transform="translate(239.999939 0)"/>
+      <use xlink:href="#GeistMono-Regular-43" transform="translate(299.999924 0)"/>
+      <use xlink:href="#GeistMono-Regular-59" transform="translate(359.999908 0)"/>
+      <use xlink:href="#GeistMono-Regular-20" transform="translate(419.999893 0)"/>
+      <use xlink:href="#GeistMono-Regular-28" transform="translate(479.999878 0)"/>
+      <use xlink:href="#GeistMono-Regular-6d" transform="translate(539.999863 0)"/>
+      <use xlink:href="#GeistMono-Regular-73" transform="translate(599.999847 0)"/>
+      <use xlink:href="#GeistMono-Regular-29" transform="translate(659.999832 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 79.849091 376.817141 
+L 119.807879 373.053773 
+L 199.725455 358.000303 
+L 359.560606 297.786425 
+L 679.230909 56.930909 
+" clip-path="url(#pa08c4fdd76)" style="fill: none; stroke: #555555; stroke-linecap: square"/>
+    <defs>
+     <path id="me90424de8e" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #555555"/>
+    </defs>
+    <g clip-path="url(#pa08c4fdd76)">
+     <use xlink:href="#me90424de8e" x="79.849091" y="376.817141" style="fill: #555555; stroke: #555555"/>
+     <use xlink:href="#me90424de8e" x="119.807879" y="373.053773" style="fill: #555555; stroke: #555555"/>
+     <use xlink:href="#me90424de8e" x="199.725455" y="358.000303" style="fill: #555555; stroke: #555555"/>
+     <use xlink:href="#me90424de8e" x="359.560606" y="297.786425" style="fill: #555555; stroke: #555555"/>
+     <use xlink:href="#me90424de8e" x="679.230909" y="56.930909" style="fill: #555555; stroke: #555555"/>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <path d="M 79.849091 377.949091 
+L 119.807879 377.826585 
+L 199.725455 377.581575 
+L 359.560606 377.091553 
+L 679.230909 376.111509 
+" clip-path="url(#pa08c4fdd76)" style="fill: none; stroke: #f9f9fb; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="mdd5cf4171e" d="M -2.5 2.5 
+L 2.5 2.5 
+L 2.5 -2.5 
+L -2.5 -2.5 
+z
+" style="stroke: #f9f9fb; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#pa08c4fdd76)">
+     <use xlink:href="#mdd5cf4171e" x="79.849091" y="377.949091" style="fill: #f9f9fb; stroke: #f9f9fb; stroke-linejoin: miter"/>
+     <use xlink:href="#mdd5cf4171e" x="119.807879" y="377.826585" style="fill: #f9f9fb; stroke: #f9f9fb; stroke-linejoin: miter"/>
+     <use xlink:href="#mdd5cf4171e" x="199.725455" y="377.581575" style="fill: #f9f9fb; stroke: #f9f9fb; stroke-linejoin: miter"/>
+     <use xlink:href="#mdd5cf4171e" x="359.560606" y="377.091553" style="fill: #f9f9fb; stroke: #f9f9fb; stroke-linejoin: miter"/>
+     <use xlink:href="#mdd5cf4171e" x="679.230909" y="376.111509" style="fill: #f9f9fb; stroke: #f9f9fb; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 49.88 394 
+L 49.88 40.88 
+" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 49.88 394 
+L 709.2 394 
+" style="fill: none; stroke: #ffffff; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <!-- N-BODY_COMPUTE_EFFICIENCY -->
+    <g style="fill: #ffffff" transform="translate(49.88 20.88) scale(0.14 -0.14)">
+     <defs>
+      <path id="GeistMono-Regular-2d" d="M 896 1613 
+L 896 2118 
+L 2944 2118 
+L 2944 1613 
+L 896 1613 
+z
+" transform="scale(0.015625)"/>
+      <path id="GeistMono-Regular-42" d="M 576 0 
+L 576 4544 
+L 1856 4544 
+Q 2605 4544 2985 4211 
+Q 3366 3878 3366 3302 
+Q 3366 3021 3232 2797 
+Q 3098 2573 2854 2445 
+Q 2611 2317 2291 2317 
+L 2291 2355 
+Q 2688 2355 2973 2220 
+Q 3258 2086 3408 1843 
+Q 3558 1600 3558 1267 
+Q 3558 678 3148 339 
+Q 2739 0 2016 0 
+L 576 0 
+z
+M 1126 538 
+L 2022 538 
+Q 2515 538 2748 730 
+Q 2982 922 2982 1267 
+Q 2982 1632 2739 1837 
+Q 2496 2042 2022 2042 
+L 1126 2042 
+L 1126 538 
+z
+M 1126 2579 
+L 1882 2579 
+Q 2355 2579 2572 2764 
+Q 2790 2950 2790 3290 
+Q 2790 3635 2572 3820 
+Q 2355 4006 1882 4006 
+L 1126 4006 
+L 1126 2579 
+z
+" transform="scale(0.015625)"/>
+      <path id="GeistMono-Regular-44" d="M 576 0 
+L 576 4544 
+L 1651 4544 
+Q 2240 4544 2678 4278 
+Q 3117 4013 3357 3504 
+Q 3597 2995 3597 2266 
+Q 3597 1536 3357 1030 
+Q 3117 525 2678 262 
+Q 2240 0 1651 0 
+L 576 0 
+z
+M 1126 538 
+L 1619 538 
+Q 2285 538 2653 970 
+Q 3021 1402 3021 2266 
+Q 3021 3130 2653 3568 
+Q 2285 4006 1619 4006 
+L 1126 4006 
+L 1126 538 
+z
+" transform="scale(0.015625)"/>
+      <path id="GeistMono-Regular-4d" d="M 1677 512 
+L 819 4032 
+L 870 4032 
+L 870 0 
+L 320 0 
+L 320 4544 
+L 1152 4544 
+L 2048 806 
+L 1792 806 
+L 2688 4544 
+L 3520 4544 
+L 3520 0 
+L 2970 0 
+L 2970 4032 
+L 3021 4032 
+L 2163 512 
+L 1677 512 
+z
+" transform="scale(0.015625)"/>
+      <path id="GeistMono-Regular-46" d="M 640 0 
+L 640 4544 
+L 3456 4544 
+L 3456 4019 
+L 909 4019 
+L 1190 4288 
+L 1190 2202 
+L 909 2483 
+L 3341 2483 
+L 3341 1958 
+L 909 1958 
+L 1190 2240 
+L 1190 0 
+L 640 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#GeistMono-Regular-4e"/>
+     <use xlink:href="#GeistMono-Regular-2d" transform="translate(59.999985 0)"/>
+     <use xlink:href="#GeistMono-Regular-42" transform="translate(119.999969 0)"/>
+     <use xlink:href="#GeistMono-Regular-4f" transform="translate(179.999954 0)"/>
+     <use xlink:href="#GeistMono-Regular-44" transform="translate(239.999939 0)"/>
+     <use xlink:href="#GeistMono-Regular-59" transform="translate(299.999924 0)"/>
+     <use xlink:href="#GeistMono-Regular-5f" transform="translate(359.999908 0)"/>
+     <use xlink:href="#GeistMono-Regular-43" transform="translate(419.999893 0)"/>
+     <use xlink:href="#GeistMono-Regular-4f" transform="translate(479.999878 0)"/>
+     <use xlink:href="#GeistMono-Regular-4d" transform="translate(539.999863 0)"/>
+     <use xlink:href="#GeistMono-Regular-50" transform="translate(599.999847 0)"/>
+     <use xlink:href="#GeistMono-Regular-55" transform="translate(659.999832 0)"/>
+     <use xlink:href="#GeistMono-Regular-54" transform="translate(719.999817 0)"/>
+     <use xlink:href="#GeistMono-Regular-45" transform="translate(779.999802 0)"/>
+     <use xlink:href="#GeistMono-Regular-5f" transform="translate(839.999786 0)"/>
+     <use xlink:href="#GeistMono-Regular-45" transform="translate(899.999771 0)"/>
+     <use xlink:href="#GeistMono-Regular-46" transform="translate(959.999756 0)"/>
+     <use xlink:href="#GeistMono-Regular-46" transform="translate(1019.999741 0)"/>
+     <use xlink:href="#GeistMono-Regular-49" transform="translate(1079.999725 0)"/>
+     <use xlink:href="#GeistMono-Regular-43" transform="translate(1139.99971 0)"/>
+     <use xlink:href="#GeistMono-Regular-49" transform="translate(1199.999695 0)"/>
+     <use xlink:href="#GeistMono-Regular-45" transform="translate(1259.99968 0)"/>
+     <use xlink:href="#GeistMono-Regular-4e" transform="translate(1319.999664 0)"/>
+     <use xlink:href="#GeistMono-Regular-43" transform="translate(1379.999649 0)"/>
+     <use xlink:href="#GeistMono-Regular-59" transform="translate(1439.999634 0)"/>
+    </g>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_17">
+     <path d="M 58.88 53.48 
+L 68.88 53.48 
+L 78.88 53.48 
+" style="fill: none; stroke: #555555; stroke-linecap: square"/>
+     <g>
+      <use xlink:href="#me90424de8e" x="68.88" y="53.48" style="fill: #555555; stroke: #555555"/>
+     </g>
+    </g>
+    <g id="text_18">
+     <!-- NAIVE_CPU -->
+     <g style="fill: #ffffff" transform="translate(86.88 56.98) scale(0.1 -0.1)">
+      <defs>
+       <path id="GeistMono-Regular-56" d="M 1562 0 
+L 192 4544 
+L 781 4544 
+L 1997 358 
+L 1843 358 
+L 3059 4544 
+L 3648 4544 
+L 2278 0 
+L 1562 0 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#GeistMono-Regular-4e"/>
+      <use xlink:href="#GeistMono-Regular-41" transform="translate(59.999985 0)"/>
+      <use xlink:href="#GeistMono-Regular-49" transform="translate(119.999969 0)"/>
+      <use xlink:href="#GeistMono-Regular-56" transform="translate(179.999954 0)"/>
+      <use xlink:href="#GeistMono-Regular-45" transform="translate(239.999939 0)"/>
+      <use xlink:href="#GeistMono-Regular-5f" transform="translate(299.999924 0)"/>
+      <use xlink:href="#GeistMono-Regular-43" transform="translate(359.999908 0)"/>
+      <use xlink:href="#GeistMono-Regular-50" transform="translate(419.999893 0)"/>
+      <use xlink:href="#GeistMono-Regular-55" transform="translate(479.999878 0)"/>
+     </g>
+    </g>
+    <g id="line2d_18">
+     <path d="M 58.88 67.08 
+L 68.88 67.08 
+L 78.88 67.08 
+" style="fill: none; stroke: #f9f9fb; stroke-width: 1.5; stroke-linecap: square"/>
+     <g>
+      <use xlink:href="#mdd5cf4171e" x="68.88" y="67.08" style="fill: #f9f9fb; stroke: #f9f9fb; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_19">
+     <!-- CUDA_TILED -->
+     <g style="fill: #ffffff" transform="translate(86.88 70.58) scale(0.1 -0.1)">
+      <use xlink:href="#GeistMono-Regular-43"/>
+      <use xlink:href="#GeistMono-Regular-55" transform="translate(59.999985 0)"/>
+      <use xlink:href="#GeistMono-Regular-44" transform="translate(119.999969 0)"/>
+      <use xlink:href="#GeistMono-Regular-41" transform="translate(179.999954 0)"/>
+      <use xlink:href="#GeistMono-Regular-5f" transform="translate(239.999939 0)"/>
+      <use xlink:href="#GeistMono-Regular-54" transform="translate(299.999924 0)"/>
+      <use xlink:href="#GeistMono-Regular-49" transform="translate(359.999908 0)"/>
+      <use xlink:href="#GeistMono-Regular-4c" transform="translate(419.999893 0)"/>
+      <use xlink:href="#GeistMono-Regular-45" transform="translate(479.999878 0)"/>
+      <use xlink:href="#GeistMono-Regular-44" transform="translate(539.999863 0)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa08c4fdd76">
+   <rect x="49.88" y="40.88" width="659.32" height="353.12"/>
+  </clipPath>
+ </defs>
+</svg>

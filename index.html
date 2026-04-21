@@ -1,248 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavel Nikolov | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css", type="text/css">
+    <script src="noise.js"></script>
+    <title>Homepage</title>
 </head>
-
 <body>
-    <div>
-        <!--Navigation tab-->
-        <section class="navigation">
-            <div><a href="index.html">Home</a></div>
-            <div class="dropdown">
-                <a class="dropbtn">Projects</a>
-                <div class="dropdown-content">
-                    <a href="Fluid Particle Simulator.html">Fluid simulation</a>
-                    <a href="Golf.html">Golf</a>
-                    <a href="Natural Selection.html">Natural selection</a>
-                    <a href="Maze Madness.html">Maze Madness</a>
-                </div>
-            </div>
-        </section>
+    <canvas id="noiseCanvas"></canvas>
 
-        <!--About me section-->
-        <section class=" dark-intro">
-            <div>
-                <h1>Pavel Nikolov</h1>
-                <div style="display: flex; flex-direction: row;">
-                    <div style="width: 50%;">
-                       <h3>3rd year Computer Science student</h3>
-                       <h3>Strong interest in Algorithms and Theoretical Computer Science</h3>
-                       <h3>Competitive Mathematics background</h3>
-                       <h3>Likes to be busy</h3>
+    <div class="outermost">
+        <header class="full-screen-intro">
+            <h1>Name</h1>
+            <p class="mono-label">Computer Science Student</p>
+            <div class="bio">
+                <p>I build high-performance simulations and explore ...</p>
+            </div>
+            <div class="highlights"></div>
+            <div class="scroll-indicator">↓ scroll to projects</div>
+        </header>
+
+    
+        <main>
+            <h2 class="section-title">Project Repository</h2>
+            <div class="project-grid">
+
+                <div class="project-square">
+                    <div class="square-header">
+                        <span class="id">ID_01</span>
+                        <h3>CUDA_N-BODY_SIM</h3>
                     </div>
-                    <div style="width: 50%;">
-                        <img>
+                    <div class="project-info-hidden">
+                        <p>Optimization of n-point interactions using shared memory tiling and warp-level primitives.</p>
+                        <a href="projects/project_template.html" class="view-link">OPEN_TECHNICAL_SPEC →</a>
                     </div>
                 </div>
+
+                <div class="project-square">
+                    <div class="square-header">
+                        <span class="id">ID_02</span>
+                        <h3>TRANSFORMER_PARSER</h3>
+                    </div>
+                    <div class="project-info-hidden">
+                        <p>Constraining LLM outputs using Context-Free Grammar (CFG) validation layers.</p>
+                        <a href="projects/project_template.html" class="view-link">OPEN_TECHNICAL_SPEC →</a>
+                    </div>
+                </div>
+
+                <div class="project-square">
+                    <div class="square-header">
+                        <span class="id">ID_03</span>
+                        <h3>GL_VOXEL_ENGINE</h3>
+                    </div>
+                    <div class="project-info-hidden">
+                        <p>A custom C++/OpenGL engine for rendering high-density voxel environments with ray-tracing.</p>
+                        <a href="projects/project_template.html" class="view-link">OPEN_TECHNICAL_SPEC →</a>
+                    </div>
+                </div>
+
+                <div class="project-square">
+                    <div class="square-header">
+                        <span class="id">ID_04</span>
+                        <h3>MAZE_GENERTOR</h3>
+                    </div>
+                    <div class="project-info-hidden">
+                        <p>Optimization of n-point interactions using shared memory tiling and warp-level primitives.</p>
+                        <a href="projects/project_template.html" class="view-link">OPEN_TECHNICAL_SPEC →</a>
+                    </div>
+                </div>
+
+                <div class="project-square">
+                    <div class="square-header">
+                        <span class="id">ID_05</span>
+                        <h3>UNIVERSE_SIM</h3>
+                    </div>
+                    <div class="project-info-hidden">
+                        <p>Constraining LLM outputs using Context-Free Grammar (CFG) validation layers.</p>
+                        <a href="projects/project_template.html" class="view-link">OPEN_TECHNICAL_SPEC →</a>
+                    </div>
+                </div>
+
+                <div class="project-square">
+                    <div class="square-header">
+                        <span class="id">ID_06</span>
+                        <h3>GOLF</h3>
+                    </div>
+                    <div class="project-info-hidden">
+                        <p>A custom C++/OpenGL engine for rendering high-density voxel environments with ray-tracing.</p>
+                        <a href="projects/project_template.html" class="view-link">OPEN_TECHNICAL_SPEC →</a>
+                    </div>
+                </div>
+
             </div>
-        </section>
-
-        <!--Programming projects sction-->
-        <section style="background-color: var(--light-background-primary); min-height: 700px;" class="sec">
-            <!--Dark waves on top-->
-            <div class="dark-intro-waves">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                        opacity=".25" style="fill: var(--dark-background);"></path>
-                    <path
-                        d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                        opacity=".5" style="fill: var(--dark-background);"></path>
-                    <path
-                        d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                        style="fill: var(--dark-background);"></path>
-                </svg>
-            </div>
-
-            <h1 style="padding-left: 5%;">Projects</h1>
-            
-            <section class="card-list">
-                <!--Particle simulation in fluids-->
-                <a href="Fluid Particle Simulator.html" class="card fpsim">
-                    <article>
-                        <header class="card-header">
-                            <h2 style="color: #000;">Fluid Particle Simulator</h2>
-                            <p style="color: #000;">
-                                A fluid particel simulator based on research papers using Smoothed-particle hydrodynamics
-                            </p>
-                            <figure>
-                                <img style="width: 300px;" src="Fluid Particle Simulator\fps1.png">
-                            </figure>
-                        </header>
-                    </article>
-                </a>
-
-                <!--2D golf game-->
-                <a href="Golf.html" class="card golf">
-                    <article>
-                        <header class="card-header">
-                            <h2 style="color: #000;">2D Golf</h2>
-                            <p style="color: #000;">
-                                A simple 2D golf game
-                            </p>
-                            <figure>
-                                
-                            </figure>
-                        </header>
-                    </article>
-                </a>
-
-                <!--Natural selection simulation-->
-                <a href="Natural Selection.html" class="card natselect">
-                    <article>
-                        <header class="card-header">
-                            <h2 style="color: #000;">Natural Selection</h2>
-                            <p style="color: #000;">
-                                
-                            </p>
-                            <figure>
-                                
-                            </figure>
-                        </header>
-                    </article>
-                </a>
-
-                <!--Algorithm comparison-->
-                <a href="Maze Madness.html" class="card algovalgo">
-                    <article>
-                        <header class="card-header">
-                            <h2 style="color: #000;">Maze Madness</h2>
-                            <p style="color: #000;">
-
-                            </p>
-                            <figure>
-                                <img style="width: 300px;" src="Maze Madness\mmDemonstration.png">
-                            </figure>
-                        </header>
-                    </article>
-                </a>
-            </section>
-        </section>
-
-        <!--Footer section-->
-        <section class="footer">
-            <!--Footer waves-->
-            <div class="waves-top">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                        opacity=".25" class="shape-fill"></path>
-                    <path
-                        d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                        opacity=".5" class="shape-fill"></path>
-                    <path
-                        d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                        class="shape-fill"></path>
-                </svg>
-            </div>
-
-            <p style="font-size: small;">©2024-2025, Pavel Nikolov. All rights reserved.</p>
-        </section>
+        </main>
     </div>
 
-    <a href="#" class="top" style="background: #000;"></a>
+    <section class="articles-section">
+        <h2 class="section-title">Articles</h2>
+        
+        <div class="article-list">
+            <article class="article-item">
+                <span class="article-meta">APR 2026 // DESIGN</span>
+                <div class="article-content">
+                    <h3><a href="articles/article_template.html">Meta Article Template: How to Write an Article</a></h3>
+                    <p>Article describing how to write articles.</p>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <span class="article-meta">MAR 2026 // CUDA</span>
+                <div class="article-content">
+                    <h3><a href="articles/article_template.html">Placeholder Article</a></h3>
+                    <p>Placeholder description that should be changed once a real article is written.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2026 P NIKOLOV // BUILT WITH GEIST & CUDA</p>
+            <div class="footer-links">
+                <a href="mailto:email@gmail.com">EMAIL</a>
+                <a href="https://github.com/ChinaLad">GITHUB</a>
+                <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
-
 </html>
-
-<style>
-    :root {
-        scroll-behavior: smooth;
-    }
-
-    h3 {
-        color: #cbcbcb;
-    }
-
-    .sec {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #home:hover {
-        font-weight: 900;
-    }
-
-    .about-me {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .card-list {
-        display: flex;
-        flex-direction: row;
-        padding: 3rem 3rem 3rem 1.5rem;
-        overflow-x: hidden;
-        flex-wrap: nowrap;
-        max-width: 90%;
-        scroll-behavior: smooth;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .card-list a {
-        text-decoration: none;
-    }
-
-    .card {
-        height: 400px;
-        width: 400px;
-        min-width: 250px;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        transition: .2s;
-        margin: 0;
-        scroll-snap-align: start;
-        clear: both;
-        position: relative;
-
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(12.4px);
-        -webkit-backdrop-filter: blur(12.4px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .card:focus-within~.card,
-    .card:hover~.card {
-        transform: translateX(50px);
-    }
-
-    .card:hover {
-        transform: translateY(-1rem);
-    }
-
-    .card:not(:first-child) {
-        margin-left: -50px;
-    }
-
-
-    .card-header {
-        margin-bottom: auto;
-    }
-
-    .card-header p {
-        font-size: 16px;
-        margin: 1rem;
-        color: #7a7a8c;
-    }
-
-    .card-header h2 {
-        font-size: 20px;
-        margin: .25rem 0 auto;
-        text-decoration: none;
-        color: inherit;
-        border: 0;
-        display: inline-block;
-        cursor: pointer;
-    }
-</style>

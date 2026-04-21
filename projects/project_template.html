@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });">
+    </script>
+
+    <link href="../prism-one-dark.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../noise.js"></script>
+    <title>Project | CUDA N-Body</title>
+</head>
+
+<body class="project-page">
+    <canvas id="noiseCanvas"></canvas>
+
+    <div class="project-page-container">
+        <header class="project-header">
+            <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
+            <div class="title-block">
+                <h1>CUDA_N-BODY_SIMULATION</h1>
+                <div class="tags">
+                    <span>#PARALLEL_COMPUTE</span>
+                    <span>#C++</span>
+                    <span>#PHYSICS_SIM</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="image-viewer-container">
+            <div class="image-viewer" id="slider">
+                <div class="img-slide" id="img1"><img src="../assets/pic1.jpg"></div>
+                <div class="img-slide" id="img2"><img src="../assets/pic2.jpg"></div>
+                <div class="img-slide" id="img3"><img src="../assets/pic3.jpg"></div>
+            </div>
+            <div class="slider-nav">
+                <a href="#img1"></a>
+                <a href="#img2"></a>
+                <a href="#img3"></a>
+            </div>
+        </section>
+
+        <main class="project-body">
+            <section class="content-block">
+                <h2>01_ABSTRACT</h2>
+                <p>This project implements a high-performance gravitational solver using CUDA. The primary challenge is the $O(N^2)$ complexity of particle interactions.</p>
+            </section>
+
+            <section class="content-block">
+                <h2>02_MATHEMATICAL_MODEL</h2>
+                <p>The acceleration $\vec{a}_i$ for a particle $i$ is defined by the summation of forces from all other particles $j$:</p>
+                <div class="math-display">
+                    $$\vec{a}_i = G \sum_{j=1, j \neq i}^{N} \frac{m_j (\vec{r}_j - \vec{r}_i)}{|\vec{r}_j - \vec{r}_i|^3}$$
+                </div>
+            </section>
+
+            <section class="content-block">
+                <h2>03_OPTIMIZATION_LOG</h2>
+                <pre><code class="language-cpp">// CUDA Shared Memory Tiling Example
+__shared__ float3 shPos[TILE_SIZE];
+
+for (int tile = 0; tile < gridDim.x; tile++) {
+    shPos[threadIdx.x] = devicePos[tile * TILE_SIZE + threadIdx.x];
+    __syncthreads();
+    // Compute interactions using shared memory...
+}</code></pre>
+            </section>
+
+            <figure class="technical-fig">
+                <div class="fig-wrapper">
+                    <img src="../assets/diagnostic_v1.svg" alt="Description of the diagram">
+                </div>
+                <figcaption>FIG_01: Visualization of the spatial hashing algorithm used to detect particle clusters.</figcaption>
+            </figure>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 P NIKOLOV // BUILT WITH GEIST & CUDA</p>
+                <div class="footer-links">
+                    <a href="mailto:email@gmail.com">EMAIL</a>
+                    <a href="https://github.com/ChinaLad">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../prism.js"></script>
+    <script>
+        // Simple function to trigger KaTeX on the page
+        function renderMath() {
+            document.querySelectorAll('.math-display').forEach(el => {
+                katex.render(el.textContent, el, { throwOnError: false, displayMode: true });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });">
+    </script>
+
+    <link href="../prism-one-dark.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../noise.js"></script>
+    <title>Article | How to Write an Article</title>
+</head>
+
+<body class="project-page">
+    <canvas id="noiseCanvas"></canvas>
+
+    <div class="project-page-container">
+        <header class="project-header">
+            <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
+            <div class="title-block">
+                <h1>Meta Article Template: How to Write an Article</h1>
+                <div class="article-meta-data">
+                    <span>APRIL 20, 2026</span>
+                    <span>//</span>
+                    <span>8 MIN_READ</span>
+                    <span>//</span>
+                    <span>STATUS: FINAL_DRAFT</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="article-body">
+            <section class="content-block">
+                <h2>00_INTRODUCTION</h2>
+                <p>This article establishes the "Technical Log" standard. Writing for a high-performance compute portfolio requires a balance of dense information and high scannability. By following these structural constraints, you ensure that complex research remains accessible to recruiters, peers, and professors.</p>
+            </section>
+
+            <section class="content-block">
+                <h2>01_ABSTRACT</h2>
+                <p>Technical writing is rarely read linearly. Most users will "spot-check" your math and code before reading your prose. Therefore, your article must be modular.</p>
+                <ol>
+                    <li>The Hook: Use the article-meta-data to prove the article is current and relevant.</li>
+                    <li>Every article must define its environment (e.g., $N=10^6$ particles, $T=300K$, or Hardware: RTX 4090).</li>
+                    <li>The Resolution: The conclusion should not just summarize, but point toward the next logical experiment.</li>
+                </ol>
+            </section>
+
+            <section class="content-block">
+                <h2>02_PARAGRAPH_GEOMETRY</h2>
+                <p>The "Goldilocks Zone" for line length on the web is between 45 and 75 characters. Your CSS handles the width, but you must handle the height.</p>
+                <ul>
+                    <li>Vertical Rhythm: Aim for "breathing room." If a paragraph exceeds 6 lines, it creates a "visual wall" that discourages reading.</li>
+                    <li>Transitioning: Use your FIG components to break up long sections of text. A diagram acts as a mental reset for the reader.</li>
+                </ul>
+            </section>
+
+            <figure class="technical-fig">
+                <div class="fig-wrapper">
+                    <img src="../assets/diagnostic_v2.svg" alt="Description of the diagram">
+                </div>
+                <figcaption>FIG_01: Visualization of the spatial hashing algorithm used to detect particle clusters.</figcaption>
+            </figure>
+
+            <section class="content-block">
+                <h2>03_TECHNICAL_INTEGRATION</h2>
+                <p>When incorporating mathematics or code, the text surrounding it must serve as the "glue."</p>
+
+                <h3>The Math-Text Sandwich:</h3>
+                <p>Always introduce an equation with the variable definitions. For example:
+"Given a set of weights $w$ and a learning rate $\eta$, we update the parameters using:"</p>
+
+                <div class="math-display">
+                    $$w_{t+1}=w_t-\eta \nabla L(w_t)$$
+                </div>
+
+                <p>Then, immediately follow with an observation about the formula's behavior in your specific project context.</p>
+
+                <h3>The Code Slice:</h3>
+                <p>Do not include boilerplate code (imports, main functions). Only include the "Kernel" or the logic that solves the problem. Use Prism tags to ensure that keywords like __global__ or template are distinct from variables.</p>
+                <pre><code class="language-cpp">// CUDA Shared Memory Tiling Example
+__shared__ float3 shPos[TILE_SIZE];
+
+for (int tile = 0; tile < gridDim.x; tile++) {
+    shPos[threadIdx.x] = devicePos[tile * TILE_SIZE + threadIdx.x];
+    __syncthreads();
+    // Compute interactions using shared memory...
+}</code></pre>
+            </section>
+
+            <section class="references-section">
+                <h2 class="section-label">04_REFERENCES_AND_CITATIONS</h2>
+                <ul class="bib-list">
+                    <li>
+                        <span class="ref-index">[01]</span>
+                        <span class="ref-details">Harris, M. (2007). <em>Optimizing CUDA: Shared Memory Tiling.</em> NVIDIA Technical Report. <a href="#">link</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[02]</span>
+                        <span class="ref-details">Knuth, D. E. (1998). <em>The Art of Computer Programming, Vol 3.</em> Addison-Wesley.</span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[03]</span>
+                        <span class="ref-details">Vasilache, N., et al. (2018). "Tensor Comprehensions." <em>arXiv:1802.04730</em>. <a href="#">doi:10.48550/arXiv.1802.04730</a></span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 P NIKOLOV // BUILT WITH GEIST & CUDA</p>
+                <div class="footer-links">
+                    <a href="mailto:email@gmail.com">EMAIL</a>
+                    <a href="https://github.com/ChinaLad">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../prism.js"></script>
+    <script>
+        // Simple function to trigger KaTeX on the page
+        function renderMath() {
+            document.querySelectorAll('.math-display').forEach(el => {
+                katex.render(el.textContent, el, { throwOnError: false, displayMode: true });
+            });
+        }
+    </script>
+</body>
+</html>
