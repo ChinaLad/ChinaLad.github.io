@@ -55,6 +55,19 @@ p {
     line-height: 1.5;
 }
 
+pre, code {
+    max-width: 100%;
+    white-space: pre-wrap;       /* Wraps the text */
+    word-wrap: break-word;       /* Breaks long variable names */
+    overflow-x: hidden;          /* Stops the side-scroll */
+}
+
+img, svg, canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ORDERED & UNORDERED LISTS */
 
 ol, ul {
@@ -165,11 +178,13 @@ ul li::marker {
 
 .outermost main {
     display: block;
-    max-width: 100%;
+    max-width: 800px;
+    width: 100%;
+    height: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
     padding-bottom: 5rem;
 }
 
@@ -436,6 +451,8 @@ pre[class*="language-"] {
         overflow-x: auto;
         overflow-y: hidden;
         padding: 1rem 0;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -452,6 +469,7 @@ pre[class*="language-"] {
 }
 
 .article-body {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem 10rem;
