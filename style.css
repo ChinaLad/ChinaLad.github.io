@@ -101,6 +101,24 @@ ul li::marker {
     width: 100%;
 }
 
+@media (min-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .section-title {
     margin-top: 4rem;
     padding-bottom: 1rem;
@@ -178,11 +196,11 @@ ul li::marker {
 
 .outermost main {
     display: block;
-    max-width: 800px;
+    max-width: 1400px;
     width: 100%;
     height: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     box-sizing: border-box;
     margin: 0 auto;
     padding-bottom: 5rem;

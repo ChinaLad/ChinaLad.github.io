@@ -22,7 +22,7 @@
     
     <link rel="stylesheet" href="../style.css">
     <script src="../noise.js"></script>
-    <title>Article | How to Write an Article</title>
+    <title>Article | Algorithms for Maximum Flow</title>
 </head>
 
 <body class="project-page">
@@ -32,7 +32,7 @@
         <header class="project-header">
             <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
             <div class="title-block">
-                <h1>Meta Article Template: How to Write an Article</h1>
+                <h1>Maxflow: </h1>
                 <div class="article-meta-data">
                     <span>APRIL 20, 2026</span>
                     <span>//</span>
@@ -46,11 +46,22 @@
         <main class="article-body">
             <section class="content-block">
                 <h2>00_INTRODUCTION</h2>
-                <p>This article establishes the "Technical Log" standard. Writing for a high-performance compute portfolio requires a balance of dense information and high scannability. By following these structural constraints, you ensure that complex research remains accessible to recruiters, peers, and professors.</p>
+                <p></p>
             </section>
 
             <section class="content-block">
-                <h2>01_ABSTRACT</h2>
+                <h2>01_MAXIMUM_FLOW</h2>
+                <p>Consider a directed graph $G=(V,E,\mathbf{c})$, where:</p>
+                <ul>
+                    <li>$V$ is the set of vertices</li>
+                    <li>$E$ is the set of edges, and</li>
+                    <li>$\textbf{c}\geq 0$ are the edge capacities</li>
+                </ul>
+                <p>We are interested in finding the flow $\mathbf{f}\in\mathbb{R}^E$</p>
+            </section>
+
+            <section class="content-block">
+                <h2>02_FLOW_DECOMPOSITION</h2>
                 <p>Technical writing is rarely read linearly. Most users will "spot-check" your math and code before reading your prose. Therefore, your article must be modular.</p>
                 <ol>
                     <li>The Hook: Use the article-meta-data to prove the article is current and relevant.</li>
@@ -60,7 +71,7 @@
             </section>
 
             <section class="content-block">
-                <h2>02_PARAGRAPH_GEOMETRY</h2>
+                <h2>03_CUTS_&_MIN-CUTS</h2>
                 <p>The "Goldilocks Zone" for line length on the web is between 45 and 75 characters. Your CSS handles the width, but you must handle the height.</p>
                 <ul>
                     <li>Vertical Rhythm: Aim for "breathing room." If a paragraph exceeds 6 lines, it creates a "visual wall" that discourages reading.</li>
@@ -76,7 +87,7 @@
             </figure>
 
             <section class="content-block">
-                <h2>03_TECHNICAL_INTEGRATION</h2>
+                <h2>04_ALGORITHMS</h2>
                 <p>When incorporating mathematics or code, the text surrounding it must serve as the "glue."</p>
 
                 <h3>The Math-Text Sandwich:</h3>
@@ -91,14 +102,10 @@
 
                 <h3>The Code Slice:</h3>
                 <p>Do not include boilerplate code (imports, main functions). Only include the "Kernel" or the logic that solves the problem. Use Prism tags to ensure that keywords like __global__ or template are distinct from variables.</p>
-                <pre><code class="language-cpp">// CUDA Shared Memory Tiling Example
-__shared__ float3 shPos[TILE_SIZE];
-
-for (int tile = 0; tile < gridDim.x; tile++) {
-    shPos[threadIdx.x] = devicePos[tile * TILE_SIZE + threadIdx.x];
-    __syncthreads();
-    // Compute interactions using shared memory...
-}</code></pre>
+                <pre><code class="language-cpp">f <- 0;
+repeat
+    Find an s-t path flow 
+</code></pre>
             </section>
 
             <section class="references-section">
