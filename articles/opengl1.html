@@ -159,6 +159,17 @@ return 0;
                 <figcaption>FIG_01: Newly created blank window.</figcaption>
             </figure>
 
+            <div class="terminal-note note-info">
+                    <span class="note-label">>> INFO</span>
+                    <p>We can use <code class="language-cpp">glClearColor(1.0f, 0.0f, 0.0f, 1.0f)</code> 
+                    to say that we want to clear the canvas with the color red. After that, to clear 
+                    the canvas to the specified color, we use <code class="language-cpp">glClear(GL_COLOR_BUFFER_BIT)</code>.</p>
+
+                    <p>We can clear not only the color buffer, but also the depth buffer by using 
+                        <code class="language-cpp">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)</code>.
+                    </p>
+                </div>
+
             <section class="content-block">
                 <h2>03_INPUTS</h2>
                 <p>We have 3 functions for processing pending events:</p>
@@ -173,13 +184,13 @@ glfwWaitEventsTimeout(t);
 </code></pre>
                 <p>Each input-processing function has its uses:</p>
                 <ul>
-                    <li><code>glfwPollEvents</code> is useful when we need to continue rendering even if 
+                    <li><code class="language-cpp">glfwPollEvents()</code> is useful when we need to continue rendering even if 
                         there is no input (exmple: games, simulations).
                     </li>
-                    <li><code>glfwWaitEvents</code> cuts down on CPU cycles and is used when we know what is 
+                    <li><code class="language-cpp">glfwWaitEvents()</code> cuts down on CPU cycles and is used when we know what is 
                         rendered shouldn't change if there is no input.
                     </li>
-                    <li><code>glfwWaitEventsTimeout</code> is used when we want to save on CPU cycles but still 
+                    <li><code class="language-cpp">glfwWaitEventsTimeout(...)</code> is used when we want to save on CPU cycles but still 
                         need the occasional redrawing of the frame.
                     </li>
                 </ul>
@@ -219,7 +230,7 @@ if (state == GLFW_PRESS) {
 
                 <div class="terminal-note note-danger">
                     <span class="note-label">>> DANGER</span>
-                    Using <code>glfwGetKey</code> can return <code>GLFW_PRESS</code> or <code>GLFW_RELEASE</code>, 
+                    Using <code class="language-cpp">glfwGetKey(...)</code> can return <code class="language-cpp">GLFW_PRESS</code> or <code class="language-cpp">GLFW_RELEASE</code>, 
                     which is unwanted if we want to act on a key press and not release.
                 </div>
 
@@ -228,19 +239,19 @@ if (state == GLFW_PRESS) {
 glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
 </code></pre>
 
-                <p>Of course, <code>glfwSetInputMode</code> isn't limited only to the keyboard. 
+                <p>Of course, <code class="language-cpp">glfwSetInputMode(...)</code> isn't limited only to the keyboard. 
                 It gives us many modes for mouse inputs as well.</p>
 
 
                 <h3>Mouse</h3>
                 <p>The available mouse modes are:</p>
                 <ul>
-                    <li><code>GLFW_CURSOR</code> has 3 modes: <code>GLFW_CURSOR_NORMAL</code> makes the cursor 
-                    visible and behaving normal, <code>GLFW_CURSOR_HIDDEN</code> hides the cursor, but it can 
-                    leave the window, <code>GLFW_CURSOR_DISABLED</code> hides and locks the cursor and is useful 
+                    <li><code class="language-cpp">GLFW_CURSOR</code> has 3 modes: <code class="language-cpp">GLFW_CURSOR_NORMAL</code> makes the cursor 
+                    visible and behaving normal, <code class="language-cpp">GLFW_CURSOR_HIDDEN</code> hides the cursor, but it can 
+                    leave the window, <code class="language-cpp">GLFW_CURSOR_DISABLED</code> hides and locks the cursor and is useful 
                     for 3D camera controls.</li>
-                    <li><code>GLFW_STICKY_MOUSE_BUTTONS</code> is analogous to <code>GLFW_STICKY_KEYS</code>.</li>
-                    <li><code>GLFW_RAW_MOUSE_MOTION</code> can allow for unscaled and unaccelerated mouse motion.</li>
+                    <li><code class="language-cpp">GLFW_STICKY_MOUSE_BUTTONS</code> is analogous to <code class="language-cpp">GLFW_STICKY_KEYS</code>.</li>
+                    <li><code class="language-cpp">GLFW_RAW_MOUSE_MOTION</code> can allow for unscaled and unaccelerated mouse motion.</li>
                 </ul>
 
                 <p>Getting the cursor position is similar to what we do for keyboard inputs.</p>

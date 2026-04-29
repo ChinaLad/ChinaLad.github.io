@@ -61,10 +61,10 @@
             </section>
 
             <section class="content-block">
-                <h2>03_GRAPHICS_PIPELINE_&_SHADERS</h2>
+                <h2>02_GRAPHICS_PIPELINE_&_SHADERS</h2>
                 <p>Rendering is a specific sequence of procedures that transforms a 3D object or scene 
                     into a 2D image that can be displayed on a screen. The graphics pipeline can 
-                    differ from one graphics API ot another, but it generally follows the same idea.
+                    differ from one graphics API to another, but it generally follows the same idea.
                 </p>
 
                 <figure class="technical-fig">
@@ -111,7 +111,81 @@
                 </p>
 
                 <h3>Fragment Shaders</h3>
-                <p>Fragment shaders operate on individual pixels.</p>
+                <p>Fragment shaders operate on individual pixels. This shader computes the 
+                    final color value of a pixel, and with extra inputs we can do fancy 
+                    things like adding lighting and shadows.
+                </p>
+
+                <h3>Compute Shader</h3>
+                <p>You can't see Compute Shaders in the graphics pipeline diagram, but they exist. 
+                    They are useful for GPU computing, but I won't go into detail about them in this 
+                    article because I want to have a separate article focusing entirely on GPU computing 
+                    using OpenGL or CUDA.
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>03_RENDERING</h2>
+                <p>After briefly explaining the graphics pipeline and shader types, it is time 
+                    to finally draw something on our brand new window. The idea is the following:
+                </p>
+                <ol>
+                    <li>Create the vertex data (it should contain at least x,y,z coordinates 
+                        for each vertex, and later we can add more stuff).</li>
+                    <li>Reserve memory on the GPU where we will store the vertex data. This 
+                        memory is managed by vertex buffer objects (VBOs).
+                    </li>
+                    <li>Send the vertex data to be rendered and specify how we want the GPU to 
+                        manage the data.
+                    </li>
+                </ol>
+
+                <p>Let's see how we can pass vertex data to the GPU.</p>
+                <pre><code class="language-cpp">// define the x,y,z positions of 3 vertices
+float vertices[] = {
+    -0.5f, -0.5f,  0.0f, // bottom left
+     0.5f, -0.5f,  0.0f, // bottom right
+     0.0f,  0.5f,  0.0f  // top
+};
+
+unsigned int VBO; // place to store the unique buffer object ID
+glGenBuffers(1, &VBO); // generate 1 buffer obj. and store its ID in VBO
+
+// bind buffer with ID saying it will contain vertex array data
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+// copy vertices data into the currently bound buffer
+// specify things like size and how often we will change the data
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+glBindBuffer(GL_ARRAY_BUFFER, 0); // unbind the buffer just in case
+</code></pre>
+
+                <div class="terminal-note note-info">
+                    <span class="note-label">>> INFO</span>
+                    <p>Depending on how often we change the vertex data, we can specify the usage
+                    pattern of the data:</p>
+                    <ul>
+                        <li><code class="language-cpp">GL_STREAM_DRAW</code>: the data is updated every frame.</li>
+                        <li><code class="language-cpp">GL_STATIC_DRAW</code>: the data is set once and the GPU reuses it.</li>
+                        <li><code class="language-cpp">GL_DYNAMIC_DRAW</code>: the data changes frequently.</li>
+                    </ul>
+                </div>
+
+                <p>The vertex data is passed succesfully to the GPU, and now we have 
+                    to tell the GPU what to do with that data. We do that with a vertex 
+                    shader.
+                </p>
+                <pre><code class="language-glsl">#version 450 core // 450 core for OpenGL version 4.5 & Core Profile
+// the 1st feature in the input is the 3D vector aPos
+layout (location = 0) in vec3 aPos;
+
+void main() {
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+}
+</code></pre>
+
+                
             </section>
 
             <section class="references-section">
