@@ -55,6 +55,11 @@ p {
     line-height: 1.5;
 }
 
+p a {
+    font-family: var(--font-mono);
+    color: var(--text);
+}
+
 pre, code {
     max-width: 100%;
     white-space: pre-wrap;       /* Wraps the text */
@@ -278,6 +283,67 @@ ul li::marker {
 .article-item:hover .article-content h3 a {
     color: var(--accent); /* Or stay white for a more "Alexandra" look */
     text-decoration: underline;
+}
+
+/* CALLOUT BASE */
+.terminal-note {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    border-left: 4px solid;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.note-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* VARIANTS (One Dark Palette) */
+.note-info { 
+    border-color: #61afef; /* Cyan */
+    background: rgba(97, 175, 239, 0.05);
+}
+.note-info .note-label { color: #61afef; }
+
+.note-info li::marker { 
+    color: #61afef;
+}
+
+.note-warn { 
+    border-color: #d19a66; /* Orange */
+    background: rgba(209, 154, 102, 0.05);
+}
+.note-warn .note-label { color: #d19a66; }
+
+.note-warn li::marker { 
+    color: #d19a66;
+}
+
+.note-tip { 
+    border-color: #98c379; /* Green */
+    background: rgba(152, 195, 121, 0.05);
+}
+.note-tip .note-label { color: #98c379; }
+
+.note-tip li::marker { 
+    color: #98c379;
+}
+
+.note-danger { 
+    border-color: #e06c75; /* Red */
+    background: rgba(224, 108, 117, 0.05);
+}
+.note-danger .note-label { color: #e06c75; }
+
+.note-danger li::marker { 
+    color: #e06c75;
 }
 
 #noiseCanvas {

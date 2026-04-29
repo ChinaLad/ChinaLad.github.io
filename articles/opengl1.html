@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });">
+    </script>
+
+    <link href="../prism-one-dark.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../noise.js"></script>
+    <title>Article | Learning OpenGL Part 1</title>
+</head>
+
+<body class="project-page">
+    <canvas id="noiseCanvas"></canvas>
+
+    <div class="project-page-container">
+        <header class="project-header">
+            <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
+            <div class="title-block">
+                <h1>OpenGL: Learning it by Writing an Article, Part 1</h1>
+                <div class="article-meta-data">
+                    <span>APRIL 28, 2026</span>
+                    <span>//</span>
+                    <span>8 MIN_READ</span>
+                    <span>//</span>
+                    <span>STATUS: FINAL_DRAFT</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="article-body">
+            <section class="content-block">
+                <h2>00_INTRODUCTION</h2>
+                <p>OpenGL is a cross-language, cross-platform API for rendering in 2D and 3D. In this article 
+                    series I want to show how to write a C++ program that renders whtever we want by using 
+                    OpenGL, starting from creating a simple window and receiving inputs.
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>01_ABSTRACT</h2>
+                <p>I'll mainly go through the book "Learn OpenGL: Graphics Programming". 
+                    The book has a clear and logical structure, and can help a beginner go from nothing to 
+                    rendering all kinds of things, working with textures, lighting and shading, and much 
+                    more. I'll also add some details here and there to create a fuller picture of the state 
+                    of OpenGL.
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>02_CREATING_A_WINDOW</h2>
+                <h3>Initial Setup</h3>
+                <p>Before we start to render, we have to create a place to draw, a window. The library 
+                    we are going to use for windows and handling inputs is GLFW. First we need to set 
+                    up GLFW before creating a window.
+                </p>
+                <pre><code class="language-cpp">glfwInit(); // initialize GLFW
+// specify which OpenGL version to use
+glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4); // version 4.x
+glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5); // version x.5
+glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+</code></pre>
+
+                <p>The GLFW OpenGL profile is used to manage the availability of legacy functionality. 
+                    The Core Profile removes deprecated fixed-function pipeline features to enforce 
+                    modern shader-based rendering. Another option is the Compatibility Profile, which 
+                    retains backward compatibility.
+                </p>
+
+                <h3>Window Creation</h3>
+                <p></p>
+                <pre><code class="language-cpp">GLFWwindow* window = glfwCreateWindow(
+    800, // width
+    600, // height
+    "Basic window", // window title
+    nullptr, // monitor for fullscreen mode, or nullptr for windowed mode
+    nullptr // window whose context to share resources with
+);
+if (window == nullptr) {
+    // window creation failed
+    glfwTerminate();
+    return -1;
+}
+glfwMakeContextCurrent(window);
+</code></pre>
+
+                <h3>GLAD Initialization</h3>
+                <p>There are many diferent versions of OpenGL drivers due to hardware 
+                    specifics, so the locations of most of the functions are not known. 
+                    The purpose of GLAD is to manage these locations.
+                </p>
+                <pre><code class="language-cpp">if (!gladLoadGL(glfwGetProcAddress)) {
+    // couldn't initialize GLAD
+    return -1;
+}
+</code></pre>
+
+                <h3>Rendering Window Size</h3>
+                <p>We set the initial window size, but we have done nothing to tell 
+                    OpenGL about where to render. We might want a slight border, or 
+                    render on the whole window.
+                </p>
+                <pre><code class="language-cpp">// function called by GLFW to resize the render area after window resizing
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+    glViewport(0, 0, width, height);
+}
+
+glViewport(
+    0, 0, // bottom left corner of the render window
+    800, 600 // width & height of the render window
+);
+
+// specify what to call on window resize
+glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); 
+</code></pre>
+
+                <h3>Render Loop & Double Buffer</h3>
+                <p>The most important place where most of the rendering happens is in the render 
+                    loop. There we render (duh), and process inputs.
+                </p>
+                <pre><code class="language-cpp">while (!glfwWindowShouldClose(window)) {
+    // do stuff & render them...
+    glfwSwapBuffers(window); // swap buffers (displays newly rendered frame)
+    glfwPollEvents(); // process inputs
+}
+
+glfwTerminate(); // destroys remaining windows, frees resources
+return 0;
+</code></pre>
+                <p>The rendering on the screen works the following way:</p>
+                <ol>
+                    <li>Display the current image on the front buffer, while drawing 
+                        on the back buffer.
+                    </li>
+                    <li>Once done, swap the front and back buffer.</li>
+                    <li>Go back to 1. and repeat the process.</li>
+                </ol>
+            </section>
+
+            <figure class="technical-fig">
+                <div class="fig-wrapper">
+                    <img src="../assets/28-04-2026_create_screen.png" alt="Description of the diagram">
+                </div>
+                <figcaption>FIG_01: Newly created blank window.</figcaption>
+            </figure>
+
+            <section class="content-block">
+                <h2>03_INPUTS</h2>
+                <p>We have 3 functions for processing pending events:</p>
+                <pre><code class="language-cpp">// processes only already received events and returns imediately
+glfwPollEvents();
+
+// thread waits until a new input is received
+glfwWaitEvents();
+
+// thread waits until a new input is received or t seconds pass
+glfwWaitEventsTimeout(t);
+</code></pre>
+                <p>Each input-processing function has its uses:</p>
+                <ul>
+                    <li><code>glfwPollEvents</code> is useful when we need to continue rendering even if 
+                        there is no input (exmple: games, simulations).
+                    </li>
+                    <li><code>glfwWaitEvents</code> cuts down on CPU cycles and is used when we know what is 
+                        rendered shouldn't change if there is no input.
+                    </li>
+                    <li><code>glfwWaitEventsTimeout</code> is used when we want to save on CPU cycles but still 
+                        need the occasional redrawing of the frame.
+                    </li>
+                </ul>
+
+                <p>If we really want to use glfwWaitEvents but want to render at specific moments, 
+                    we can use:
+                </p>
+                <pre><code class="language-cpp">// posts an empty event to wake up glfwWaitEvents()
+glfwPostEmptyEvent();
+</code></pre>
+
+                <h3>Keyboard</h3>
+                <p>We can specify what we do on specific keyboard inputs. We can specify the heyboard 
+                    key, the key action (press, release, hold).
+                </p>
+
+                <pre><code class="language-cpp">void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_E && action == GLFW_PRESS)
+        // do something when E is pressed
+}
+
+// in main()
+glfwSetKeyCallback(window, key_callback);
+</code></pre>
+
+                <p>There are other ways to get keyboard inputs, but they have their quirks and dangers. 
+                    The last reported state of keys is stored in per-window state arrays and it can be 
+                    retrieved.
+                </p>
+                <pre><code class="language-cpp">// get last state of the key E
+int state = glfwGetKey(window, GLFW_KEY_E);
+
+if (state == GLFW_PRESS) {
+    // do something
+}
+</code></pre>
+
+                <div class="terminal-note note-danger">
+                    <span class="note-label">>> DANGER</span>
+                    Using <code>glfwGetKey</code> can return <code>GLFW_PRESS</code> or <code>GLFW_RELEASE</code>, 
+                    which is unwanted if we want to act on a key press and not release.
+                </div>
+
+                <pre><code class="language-cpp">// make it so that GLFW_PRESS is stored only after the key is released
+// then we don't have to worry about glfwGetKey returning GLFW_RELEASE
+glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
+</code></pre>
+
+                <p>Of course, <code>glfwSetInputMode</code> isn't limited only to the keyboard. 
+                It gives us many modes for mouse inputs as well.</p>
+
+
+                <h3>Mouse</h3>
+                <p>The available mouse modes are:</p>
+                <ul>
+                    <li><code>GLFW_CURSOR</code> has 3 modes: <code>GLFW_CURSOR_NORMAL</code> makes the cursor 
+                    visible and behaving normal, <code>GLFW_CURSOR_HIDDEN</code> hides the cursor, but it can 
+                    leave the window, <code>GLFW_CURSOR_DISABLED</code> hides and locks the cursor and is useful 
+                    for 3D camera controls.</li>
+                    <li><code>GLFW_STICKY_MOUSE_BUTTONS</code> is analogous to <code>GLFW_STICKY_KEYS</code>.</li>
+                    <li><code>GLFW_RAW_MOUSE_MOTION</code> can allow for unscaled and unaccelerated mouse motion.</li>
+                </ul>
+
+                <p>Getting the cursor position is similar to what we do for keyboard inputs.</p>
+                <pre><code class="language-cpp">
+static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
+    // do something
+}
+
+// in main()
+glfwSetCursorPosCallback(window, cursor_position_callback);
+
+// OR poll the per-window stored cursor positon
+double xpos, ypos;
+glfwGetCursorPos(window, &xpos, &ypos);
+</code></pre>
+
+                <p>GLFW even allows us to costumize the cursor.</p>
+
+                <h3>Text Input</h3>
+                <p>Text input differs from normal keyboard input by the fact that it is affected by 
+                    keyboard layouts and modifier keys.
+                </p>
+                <pre><code class="language-cpp">void character_callback(GLFWwindow* window, unsigned int codepoint) {
+    // do something
+}
+
+// in main()
+glfwSetCharCallback(window, character_callback);
+</code></pre>
+
+
+                <h3>Other Inputs</h3>
+                <p>GLFW isn't limited only to receiving inputs from mice and keyboards. It can work with joysticks 
+                    gamepads, time, and clipboard. For more info you can check GLFW's documentation here: 
+                    <a href="https://www.glfw.org/docs/3.3/input_guide.html">GLFW Input Guide</a>.
+                </p>
+            </section>
+
+            <section class="references-section">
+                <h2 class="section-label">REFERENCES_AND_CITATIONS</h2>
+                <ul class="bib-list">
+                    <li>
+                        <span class="ref-index">[01]</span>
+                        <span class="ref-details"><em>OpenGL</em> Wikipedia, 28 April 2026 <a href="https://en.wikipedia.org/wiki/OpenGL">link</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[02]</span>
+                        <span class="ref-details">de Vries, J. (2020). <em>Learn OpenGL</em> Kendall & Welling.</span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[03]</span>
+                        <span class="ref-details"><em>GLFW Documentation</em> 28 April 2026. <a href="https://www.glfw.org/">link</a></span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 PAVEL NIKOLOV // BUILT WITH OLD HARDWARE & DREAMS</p>
+                <div class="footer-links">
+                    <a href="mailto:email@gmail.com">EMAIL</a>
+                    <a href="https://github.com/ChinaLad">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../prism.js"></script>
+    <script>
+        // Simple function to trigger KaTeX on the page
+        function renderMath() {
+            document.querySelectorAll('.math-display').forEach(el => {
+                katex.render(el.textContent, el, { throwOnError: false, displayMode: true });
+            });
+        }
+    </script>
+</body>
+</html>

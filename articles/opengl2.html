@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });">
+    </script>
+
+    <link href="../prism-one-dark.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../noise.js"></script>
+    <title>Article | Learning OpenGL Part 2</title>
+</head>
+
+<body class="project-page">
+    <canvas id="noiseCanvas"></canvas>
+
+    <div class="project-page-container">
+        <header class="project-header">
+            <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
+            <div class="title-block">
+                <h1>OpenGL: Learning it by Writing an Article, Part 2</h1>
+                <div class="article-meta-data">
+                    <span>APRIL 29, 2026</span>
+                    <span>//</span>
+                    <span>8 MIN_READ</span>
+                    <span>//</span>
+                    <span>STATUS: FINAL_DRAFT</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="article-body">
+            <section class="content-block">
+                <h2>00_INTRODUCTION</h2>
+                <p>OpenGL is a cross-language, cross-platform API for rendering in 2D and 3D. In this article 
+                    series I want to show how to write a C++ program that renders whtever we want by using 
+                    OpenGL, starting from creating a simple window and receiving inputs.
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>01_ABSTRACT</h2>
+                <p>Continuing from <a href="opengl1.html">Part 1</a>, now we will learn 
+                    how things are rendered. We will cover how to get things drawn on 
+                    the screen, what the rendering pipeline is, and what shaders are. 
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>03_GRAPHICS_PIPELINE_&_SHADERS</h2>
+                <p>Rendering is a specific sequence of procedures that transforms a 3D object or scene 
+                    into a 2D image that can be displayed on a screen. The graphics pipeline can 
+                    differ from one graphics API ot another, but it generally follows the same idea.
+                </p>
+
+                <figure class="technical-fig">
+                    <div class="fig-wrapper">
+                        <img src="../assets/29-04-2026_graphics_pipeline.svg" alt="Description of the diagram">
+                    </div>
+                    <figcaption>FIG_01: Graphics pipeline diagram.</figcaption>
+                </figure>
+
+                <p>Shaders are small programmable operations that can be applied on data moving through the 
+                    rendering pipeline. We can create our own vertex, geometry, and fragment shaders for rendering.
+                </p>
+
+                <h3>Vertex Shaders</h3>
+                <p>The vertex shader is responsible for the 3D points that define the 
+                    object we want to render. It runs once for each vertex and does the 
+                    following things:
+                </p>
+                <ul>
+                    <li>Transforms (scaling, rotations, translations) the 3D vertices 
+                        using linear transformations.
+                    <li>Manipulates vertex properties which often are things like color 
+                        and texture coordinates.
+                    </li>
+                    <li>Translates the 3D vertex positions to their places on the screen.</li>
+                </ul>
+
+                <div class="terminal-note note-info">
+                    <span class="note-label">>> INFO</span>
+                    We are free to define vertex properties depending on what we want 
+                    to render. Examples are:
+                    <ul>
+                        <li>Conway's Game of LIfe - cell's dead or alive state.</li>
+                        <li>Physics Simulations - particle's speed, mass, other property.</li>
+                    </ul>
+                </div>
+
+                <h3>Geometry Shaders</h3>
+                <p>Geometry shaders are executed after vertex shaders and operate on 
+                    primitives rather than vertices. If the primitives are triangles, 
+                    the shaders gets a triangle as an input. The primitive can be made 
+                    into 0 or more primitives, which are rasterized and passed to the 
+                    fragment shader.
+                </p>
+
+                <h3>Fragment Shaders</h3>
+                <p>Fragment shaders operate on individual pixels.</p>
+            </section>
+
+            <section class="references-section">
+                <h2 class="section-label">REFERENCES_AND_CITATIONS</h2>
+                <ul class="bib-list">
+                    <li>
+                        <span class="ref-index">[01]</span>
+                        <span class="ref-details"><em>Shader</em> Wikipedia, 29 April 2026 <a href="https://en.wikipedia.org/wiki/Shader">link</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[02]</span>
+                        <span class="ref-details">de Vries, J. (2020). <em>Learn OpenGL</em> Kendall & Welling.</span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[03]</span>
+                        <span class="ref-details"><em>GLFW Documentation</em> 28 April 2026. <a href="https://www.glfw.org/">link</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[04]</span>
+                        <span class="ref-details">Vivo, P. G. & Lowe, J. <em>The Book of Shaders</em> 29 April 2026. <a href="https://thebookofshaders.com/01/">link</a></span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 PAVEL NIKOLOV // BUILT WITH OLD HARDWARE & DREAMS</p>
+                <div class="footer-links">
+                    <a href="mailto:email@gmail.com">EMAIL</a>
+                    <a href="https://github.com/ChinaLad">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../prism.js"></script>
+    <script>
+        // Simple function to trigger KaTeX on the page
+        function renderMath() {
+            document.querySelectorAll('.math-display').forEach(el => {
+                katex.render(el.textContent, el, { throwOnError: false, displayMode: true });
+            });
+        }
+    </script>
+</body>
+</html>

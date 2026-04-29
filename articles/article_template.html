@@ -99,6 +99,26 @@ for (int tile = 0; tile < gridDim.x; tile++) {
     __syncthreads();
     // Compute interactions using shared memory...
 }</code></pre>
+
+                <div class="terminal-note note-info">
+                    <span class="note-label">>> INFO</span>
+                    Modern OpenGL (3.3+) strictly requires a Vertex Array Object (VAO) to be bound before any draw calls.
+                </div>
+
+                <div class="terminal-note note-warn">
+                    <span class="note-label">>> ATTENTION</span>
+                    Driver implementations vary. Intel integrated graphics are notoriously strict about shader layout qualifiers.
+                </div>
+
+                <div class="terminal-note note-tip">
+                    <span class="note-label">>> OPTIMIZATION</span>
+                    Use <code>glDrawElements</code> instead of <code>glDrawArrays</code> to reuse vertices and save memory.
+                </div>
+
+                <div class="terminal-note note-danger">
+                    <span class="note-label">>> DANGER</span>
+                    Use <code>glDrawElements</code> instead of <code>glDrawArrays</code> to reuse vertices and save memory.
+                </div>
             </section>
 
             <section class="references-section">
