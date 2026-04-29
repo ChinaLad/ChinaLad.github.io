@@ -55,8 +55,9 @@ p {
     line-height: 1.5;
 }
 
-p a {
+.page-link {
     font-family: var(--font-mono);
+    font-weight: 500;
     color: var(--text);
 }
 
