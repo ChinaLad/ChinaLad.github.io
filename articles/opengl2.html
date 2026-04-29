@@ -140,6 +140,7 @@
                     </li>
                 </ol>
 
+                <h3>Passing Vertex Data</h3>
                 <p>Let's see how we can pass vertex data to the GPU.</p>
                 <pre><code class="language-cpp">// define the x,y,z positions of 3 vertices
 float vertices[] = {
@@ -172,6 +173,7 @@ glBindBuffer(GL_ARRAY_BUFFER, 0); // unbind the buffer just in case
                     </ul>
                 </div>
 
+                <h3>Writing Shaders</h3>
                 <p>The vertex data is passed succesfully to the GPU, and now we have 
                     to tell the GPU what to do with that data. We do that with a vertex 
                     shader.
@@ -181,11 +183,181 @@ glBindBuffer(GL_ARRAY_BUFFER, 0); // unbind the buffer just in case
 layout (location = 0) in vec3 aPos;
 
 void main() {
+    // set the vertex shader output
     gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
 }
 </code></pre>
 
+                <p>We'll skip the geometry shader for now and move to the fragment shader.</p>
+                <pre><code class="language-glsl">#version 450 core
+
+out vec4 FragColor; // no input, so the color is static
+
+void main() {
+    // determine the pixel color
+    FragColor = vec4(0.0f, 0.6196f, 0.945f, 1.0f);
+}
+</code></pre>
+
+            <h3>Loading the Shaders</h3>
+            <p>We should have the shader source code as character arrays, and we point to that 
+                when we specify the shader source.
+            </p>
+            <pre><code class="language-cpp">// create & load the vertex shader
+unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER); // specify shader type
+
+// specify the shader ID, num. of shader source codes, 
+// pointer to the shader source code, and NULL
+glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+glCompileShader(vertexShader);
+
+// create & load the fragment shader
+unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+glCompileShader(fragmentShader);
+
+// create a program object, attach the shaders, and link them
+unsigned int shaderProgram = glCreateProgram();
+glAttachShader(shaderProgram, vertexShader);
+glAttachShader(shaderProgram, fragmentShader);
+glLinkProgram(shaderProgram);
+</code></pre>
+
+            <p>Finally, to actually use the shader program, we use <code class="language-cpp">glUseProgram(shaderProgram)</code>. 
+            Once we link the shaders, we don't need the vertex nd fragment shaders, so we can 
+        delete them with <code class="language-cpp">glDeleteShader(vertexShader)</code> and <code class="language-cpp">glDeleteShader(fragmentShader)</code>.</p>
                 
+                <div class="terminal-note note-tip">
+                    <span class="note-label">>> TIP</span>
+                    <p>Use <code class="language-cpp">glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success)</code> 
+                    to load the compilation status to <code class="language-cpp">success</code>. We can get other 
+                    information using:</p>
+                    <ul>
+                        <li><code class="language-cpp">GL_SHADER_TYPE</code></li>
+                        <li><code class="language-cpp">GL_DELETE_STATUS</code></li>
+                        <li><code class="language-cpp">GL_INFO_LOG_LENGTH</code></li>
+                        <li><code class="language-cpp">GL_SHADER_SOURCE_LENGTH</code></li>
+                    </ul>
+                </div>
+
+                <h3>Vertex Data Interpretation</h3>
+                <p>We got the vertex data to the GPU memory and told the GPU what computations 
+                    to do, but we have to mention how to interpret the data. That is done with 
+                    Vertex Array Objects (VAOs). 
+                </p>
+
+                <div class="terminal-note note-warn">
+                    <span class="note-label">>> ATTENTION</span>
+                    Core OpenGL requires VAO and if there is no VAO, OpenGL might not draw anything.
+                </div>
+
+                <p>The creation of a VAO is similar to that of a VBO.</p>
+                <pre><code class="language-cpp">// generate the VAO
+unsigned int VAO;
+glGenVertexArrays(1, &VAO);
+
+glBindVertexArray(VAO); // bind the VAO
+
+// transfer the vertex data to the GPU
+
+glVertexAttribPointer(
+    0, // 1st vertex feature (layout = 0 in the vertex shader)
+    3, // number of components per feature
+    GL_FLOAT, // data type
+    GL_FALSE, // is the data normalized
+    3 * sizeof(float), // stride length
+    (void*)0 // offset of the 1st value in the vertex features 
+);
+glEnableVertexAttribArray(0);
+</code></pre>
+
+                <h3>Drawing</h3>
+                <p>Finally, we can draw a triangle.</p>
+                <pre><code class="language-cpp">// use the shader
+glUseProgram(shaderProgram);
+
+// ...
+
+// in the loop
+glBindVertexArray(VAO);
+glDrawArrays(
+    GL_TRIANGLES, // what kind of primitive to render
+    0, // from which vertex to start
+    3 // number of vertices to render
+);
+</code></pre>
+
+            <p>We can select from the following primitives.</p>
+            <ul>
+                <li><code class="language-cpp">GL_POINTS</code></li>
+                <li><code class="language-cpp">GL_LINE_STRIP</code></li>
+                <li><code class="language-cpp">GL_LINE_LOOP</code></li>
+                <li><code class="language-cpp">GL_LINES</code></li>
+                <li><code class="language-cpp">GL_LINE_STRIP_ADJACENCY</code></li>
+                <li><code class="language-cpp">GL_LINES_ADJACENCY</code></li>
+                <li><code class="language-cpp">GL_TRIANGLE_STRIP</code></li>
+                <li><code class="language-cpp">GL_TRIANGLE_FAN</code></li>
+                <li><code class="language-cpp">GL_TRIANGLES</code></li>
+                <li><code class="language-cpp">GL_TRIANGLE_STRIP_ADJACENCY</code></li>
+                <li><code class="language-cpp">GL_TRIANGLES_ADJACENCY</code></li>
+                <li><code class="language-cpp">GL_PATCHES</code></li>
+            </ul>
+
+            <figure class="technical-fig">
+                <div class="fig-wrapper">
+                    <img src="../assets/29-04-2026_triangle.png" alt="Triangle render">
+                </div>
+                <figcaption>FIG_02: Triangle render.</figcaption>
+            </figure>
+
+            <h3>Element Buffer Objects</h3>
+            <p>If we want to render a rectangle, we need to draw 2 triangles. For 2 triangles 
+                we need 6 vertices in total and 2 of them are repeated. This takes up space in 
+                the GPU's memory, but we can avoid storing the same vertex multiple times by 
+                using an element buffer object (EBO). BY using it, we specify the vertices, 
+                and specify the triangles by selecting indices of the vertices we want for the 
+                triangle. Here is an example:
+            </p>
+
+            <pre><code class="language-cpp">float vertices[] = {
+     0.5f,  0.5f, 0.0f,  // top right
+     0.5f, -0.5f, 0.0f,  // bottom right
+    -0.5f, -0.5f, 0.0f,  // bottom left
+    -0.5f,  0.5f, 0.0f   // top left 
+};
+unsigned int indices[] = {
+    0, 1, 3,   // first triangle
+    1, 2, 3    // second triangle
+}; 
+</code></pre>
+
+            <figure class="technical-fig">
+                <div class="fig-wrapper">
+                    <img src="../assets/30-04-2026_quad.svg" alt="Triangle render">
+                </div>
+                <figcaption>FIG_03: Drawind using an EBO.</figcaption>
+            </figure>
+
+            <p>We need to create an EBO, bind it, and send the data to the GPU.</p>
+            <pre><code class="language-cpp">// generate the EBO ID
+unsigned int EBO;
+glGenBuffers(1, &EBO);
+
+// send the data to the GPU
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+// ...
+// in the render loop
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glDrawElements(
+    GL_TRIANGLES, // draw full triangles
+    6, // number of vertices to draw
+    GL_UNSIGNED_INT, // data type of the values in indices
+    0 // from which vertex to start
+);
+</code></pre>
+
             </section>
 
             <section class="references-section">
