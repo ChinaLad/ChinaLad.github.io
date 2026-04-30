@@ -142,6 +142,9 @@ ul li::marker {
 
 /* 2. The Project Square */
 .project-square {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     border: 1px solid var(--border);
     padding: 2rem;
     aspect-ratio: 1/1;
