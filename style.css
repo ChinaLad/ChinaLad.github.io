@@ -160,6 +160,7 @@ ul li::marker {
     background: #0a0a0a; /* Solidify to help readability */
     border-color: var(--text);
     transform: scale(1.02);
+    max-width: 500px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 

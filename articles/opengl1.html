@@ -47,13 +47,13 @@
             <section class="content-block">
                 <h2>00_INTRODUCTION</h2>
                 <p>OpenGL is a cross-language, cross-platform API for rendering in 2D and 3D. In this article 
-                    series I want to show how to write a C++ program that renders whtever we want by using 
+                    series I want to show how to write a C++ program that renders whatever we want by using 
                     OpenGL, starting from creating a simple window and receiving inputs.
                 </p>
             </section>
 
             <section class="content-block">
-                <h2>01_ABSTRACT</h2>
+                <h2>01_PREFACE</h2>
                 <p>I'll mainly go through the book "Learn OpenGL: Graphics Programming". 
                     The book has a clear and logical structure, and can help a beginner go from nothing to 
                     rendering all kinds of things, working with textures, lighting and shading, and much 
@@ -203,7 +203,7 @@ glfwPostEmptyEvent();
 </code></pre>
 
                 <h3>Keyboard</h3>
-                <p>We can specify what we do on specific keyboard inputs. We can specify the heyboard 
+                <p>We can specify what we do on specific keyboard inputs. We can specify the keyboard 
                     key, the key action (press, release, hold).
                 </p>
 
@@ -216,8 +216,8 @@ glfwPostEmptyEvent();
 glfwSetKeyCallback(window, key_callback);
 </code></pre>
 
-                <p>There are other ways to get keyboard inputs, but they have their quirks and dangers. 
-                    The last reported state of keys is stored in per-window state arrays and it can be 
+                <p>There are other ways to get keyboard inputs, but they have their quirks and issues. 
+                    The last reported state of a key is stored in per-window state arrays and it can be 
                     retrieved.
                 </p>
                 <pre><code class="language-cpp">// get last state of the key E
