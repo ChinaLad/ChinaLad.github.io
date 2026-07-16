@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });">
+    </script>
+
+    <link href="../prism-one-dark.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../noise.js"></script>
+    <title>Project | 3D Conway's Game of Life</title>
+</head>
+
+<body class="project-page">
+    <canvas id="noiseCanvas"></canvas>
+
+    <div class="project-page-container">
+        <header class="project-header">
+            <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
+            <div class="title-block">
+                <h1>3D Conway's Game of Life</h1>
+                <div class="tags">
+                    <span>#SIMULATION</span>
+                    <span>#OPEN_GL</span>
+                    <span>#C++</span>
+                    <span>#GPU</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="image-viewer-container">
+            <div class="image-viewer" id="slider">
+                <div class="img-slide" id="img1"><img src="../assets/3d_conway_demo1.png"></div>
+                <div class="img-slide" id="img2"><img src="../assets/3d_conway_demo2.png"></div>
+                <div class="img-slide" id="img3"><img src="../assets/3d_conway_demo4.png"></div>
+            </div>
+            <div class="slider-nav">
+                <a href="#img1"></a>
+                <a href="#img2"></a>
+                <a href="#img3"></a>
+            </div>
+        </section>
+
+        <main class="project-body">
+            <section class="content-block">
+                <h2>00_ABSTRACT</h2>
+                <p>This project is a high-performance, real-time 3D simulation of COnway's Game of life built from scratch in C++ and OpenGL.
+                    It leverages GPU Compute Shaders for parallel cell state evaluation and translates discrete voxel spaces into continuous 
+                    3D environments using an optimized screen-space Raymarching renderer.
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>01_INTRODUCTION</h2>
+                <p>Every programmer has heard of John Conway's famous Game of Life. With such a grand name, a normal person would expect 
+                    the game to be something like The Sims, but in reality it is a simple zero-player game.</p>
+                <p>The first of the two main 
+                    components are a bunch of "cells" that are ordered in a grid. These cells are just squares with colors indicating 
+                    whether they are dead or alive. The second component are a bunch of rules, which determine if a cell lives or gets 
+                    born depending in the cells around it.</p>
+                <p>Given these components, all that's left is an initial state of the cells in 
+                    the grid world, everything else is up to the cells and rules.</p>
+                <figure class="technical-fig">
+                    <div class="fig-wrapper">
+                        <img src="../assets/cgol_wiki_inv.gif" alt="Description of the diagram">
+                    </div>
+                    <figcaption>FIG_01: Demonstration of complex behaviour in Conway's Game of Life by <a class="page-link" href="https://commons.wikimedia.org/w/index.php?curid=101736">Lucas Vieira</a></figcaption>
+                </figure>
+                <p>In the classic case, the grid is 2-D and each cell considers its 8 neighbors. This gives us a light simulation that 
+                    is easy to visualize. However, as a good introductory project, it is kinda clichéd. The fix is simple, we just 
+                    introduce a 3rd dimension.</p>
+            </section>
+
+            <section class="content-block">
+                <h2>02_THE_3D_CHALLENGE</h2>
+                <p>A 3rd dimension introduces some problems:</p>
+                <ol>
+                    <li>Now we have $n^3$ cells instead of just $n^2$, so performance is of utmost importance if we want a real-time game.</li>
+                    <li>We move from the quiet life in the suburbs to a high-density building with 26 neighbors instead of 8.</li>
+                    <li>How can we visualize the 3D world on a flat screen?</li>
+                    <li>The 2D instance has been explored a lot, and many sets of rules are well-documented, for 3D we need more digging.</li>
+                </ol>
+            </section>
+
+            <section class="content-block">
+                <h2>03_DEVELOPMENT_DECISIONS</h2>
+                <p></p>
+                <figure class="technical-fig">
+                    <div class="fig-wrapper">
+                        <img src="../assets/3d_cgol_tech.svg" alt="Description of the diagram">
+                    </div>
+                    <figcaption>FIG_02: Thought process behind the choice of OpenGL</figcaption>
+                </figure>
+                <p></p>
+                
+                <figure class="technical-fig">
+                    <div class="fig-wrapper">
+                        <img src="../assets/ray_marching.svg" alt="Description of the diagram">
+                    </div>
+                    <figcaption>FIG_03: Idea behind ray marching</figcaption>
+                </figure>
+            </section>
+
+            
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 PAVEL NIKOLOV // BUILT WITH OLD HARDWARE & DREAMS</p>
+                <div class="footer-links">
+                    <a href="mailto:email@gmail.com">EMAIL</a>
+                    <a href="https://github.com/ChinaLad">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../prism.js"></script>
+    <script>
+        // Simple function to trigger KaTeX on the page
+        function renderMath() {
+            document.querySelectorAll('.math-display').forEach(el => {
+                katex.render(el.textContent, el, { throwOnError: false, displayMode: true });
+            });
+        }
+    </script>
+</body>
+</html>
