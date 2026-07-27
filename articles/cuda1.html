@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" 
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        });">
+    </script>
+
+    <link href="../prism-one-dark.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../noise.js"></script>
+    <title>Article | CUDA Part 1</title>
+</head>
+
+<body class="project-page">
+    <canvas id="noiseCanvas"></canvas>
+
+    <div class="project-page-container">
+        <header class="project-header">
+            <a href="../index.html" class="back-link">← BACK_TO_LOG</a>
+            <div class="title-block">
+                <h1>CUDA Architecture & Your First Vector Addition</h1>
+                <div class="article-meta-data">
+                    <span>JULY 24, 2026</span>
+                    <span>//</span>
+                    <span>8 MIN_READ</span>
+                    <span>//</span>
+                    <span>STATUS: FINAL_DRAFT</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="article-body">
+            <section class="content-block">
+                <h2>00_INTRODUCTION</h2>
+                <p>
+                    The GPU isn't reserved only for video game developers and local LLMs to use as they please. 
+                    As the owner of the GPU, you can use it as you like, just like you use your CPU when programming. 
+                    The main question is how to make the GPU execute code, and what are the tasks in which it exceeds.
+                    In this and the following articles about CUDA, we will see what the GPU is and how to use it to compute 
+                    stuff very quickly.
+                </p>
+            </section>
+
+            <section class="content-block">
+                <h2>01_GPU_ARCHITECTURE_&_TERMINOLOGY</h2>
+                <p>
+                    Many articles and tutorials spend a lot of time explaining the key concepts, but I'll go quickly through 
+                    them and with each new example and diagram things will become clearer and give us a fuller picture.
+                </p>
+                <figure class="technical-fig">
+                    <div class="fig-wrapper">
+                        <img src="../assets/gpu_arch.svg" alt="Description of the diagram">
+                    </div>
+                    <figcaption>FIG_01: GPU Architecture</figcaption>
+                </figure>
+                <ul>
+                    <li><b>Host</b> is the CPU & its memory.</li>
+                    <li><b>Device</b> is the GPU & its memory.</li>
+                    <li><b>Kernels</b> are functions declared with <code>__global__</code> launched by the host and executed across 
+                    thousands of device cores.</li>
+                </ul>
+                <p>
+                    We mentioned parallelism, and in CPUs, parallelism introduces concepts like threads and processes. Some of these concepts are 
+                    key for GPUs. The smallest units of programming for GPUs are threads, and they are further organized into larger structures.
+                </p>
+                <ul>
+                    <li><b>Warp</b> is a sequence of 32 consecutive threads. They share the same instruction 
+                    pointer, so an instruction aimed at a thread is sent to the whole warp.</li>
+                    <li><b>Block</b> is a 1/2/3D set of threads. The dimensions help with kernel development 
+                    since some task naturally work with 2D (matrices, images), or 3D grids (videos, 3D textures).</li>
+                    <li><b>Grid</b> is a 1/2/3D set of blocks.</li>
+                </ul>
+                <p>
+                    The concepts above also dictate data movement, but that will be discussed later.
+                </p>
+                <p>
+                    The GPU is like a CPU specifically developed for performing many simple computations in parallel. Multiple cores 
+                    share L1 Cache, the cores are simpler and specialized for calculations, and more.
+                </p>
+
+                <div class="terminal-note note-info">
+                    <span class="note-label">>> INFO</span>
+                    GPU cores are so simple that even branching using <code>if</code>'s doen't work like in CPUs. All branches are computed by
+                    splitting the cases across multiple threads.
+                </div>
+            </section>
+
+            <section class="content-block">
+                <h2>02_CPU-GPU_MEMORY_BRIDGE</h2>
+                <p>The "Goldilocks Zone" for line length on the web is between 45 and 75 characters. Your CSS handles the width, but you must handle the height.</p>
+                <ul>
+                    <li>Vertical Rhythm: Aim for "breathing room." If a paragraph exceeds 6 lines, it creates a "visual wall" that discourages reading.</li>
+                    <li>Transitioning: Use your FIG components to break up long sections of text. A diagram acts as a mental reset for the reader.</li>
+                </ul>
+            </section>
+
+            <figure class="technical-fig">
+                <div class="fig-wrapper">
+                    <img src="../assets/diagnostic_v2.svg" alt="Description of the diagram">
+                </div>
+                <figcaption>FIG_01: Visualization of the spatial hashing algorithm used to detect particle clusters.</figcaption>
+            </figure>
+
+            <section class="content-block">
+                <h2>03_TECHNICAL_INTEGRATION</h2>
+                <p>When incorporating mathematics or code, the text surrounding it must serve as the "glue."</p>
+
+                <h3>The Math-Text Sandwich:</h3>
+                <p>Always introduce an equation with the variable definitions. For example:
+"Given a set of weights $w$ and a learning rate $\eta$, we update the parameters using:"</p>
+
+                <div class="math-display">
+                    $$w_{t+1}=w_t-\eta \nabla L(w_t)$$
+                </div>
+
+                <p>Then, immediately follow with an observation about the formula's behavior in your specific project context.</p>
+
+                <h3>The Code Slice:</h3>
+                <p>Do not include boilerplate code (imports, main functions). Only include the "Kernel" or the logic that solves the problem. Use Prism tags to ensure that keywords like __global__ or template are distinct from variables.</p>
+                <pre><code class="language-cpp">// CUDA Shared Memory Tiling Example
+__shared__ float3 shPos[TILE_SIZE];
+
+for (int tile = 0; tile < gridDim.x; tile++) {
+    shPos[threadIdx.x] = devicePos[tile * TILE_SIZE + threadIdx.x];
+    __syncthreads();
+    // Compute interactions using shared memory...
+}</code></pre>
+
+                <div class="terminal-note note-info">
+                    <span class="note-label">>> INFO</span>
+                    Modern OpenGL (3.3+) strictly requires a Vertex Array Object (VAO) to be bound before any draw calls.
+                </div>
+
+                <div class="terminal-note note-warn">
+                    <span class="note-label">>> ATTENTION</span>
+                    Driver implementations vary. Intel integrated graphics are notoriously strict about shader layout qualifiers.
+                </div>
+
+                <div class="terminal-note note-tip">
+                    <span class="note-label">>> OPTIMIZATION</span>
+                    Use <code>glDrawElements</code> instead of <code>glDrawArrays</code> to reuse vertices and save memory.
+                </div>
+
+                <div class="terminal-note note-danger">
+                    <span class="note-label">>> DANGER</span>
+                    Use <code>glDrawElements</code> instead of <code>glDrawArrays</code> to reuse vertices and save memory.
+                </div>
+            </section>
+
+            <section class="references-section">
+                <h2 class="section-label">04_REFERENCES_AND_CITATIONS</h2>
+                <ul class="bib-list">
+                    <li>
+                        <span class="ref-index">[01]</span>
+                        <span class="ref-details">Harris, M. (2007). <em>Optimizing CUDA: Shared Memory Tiling.</em> NVIDIA Technical Report. <a href="#">link</a></span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[02]</span>
+                        <span class="ref-details">Knuth, D. E. (1998). <em>The Art of Computer Programming, Vol 3.</em> Addison-Wesley.</span>
+                    </li>
+                    <li>
+                        <span class="ref-index">[03]</span>
+                        <span class="ref-details">Vasilache, N., et al. (2018). "Tensor Comprehensions." <em>arXiv:1802.04730</em>. <a href="#">doi:10.48550/arXiv.1802.04730</a></span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 PAVEL NIKOLOV // BUILT WITH OLD HARDWARE & DREAMS</p>
+                <div class="footer-links">
+                    <a href="mailto:email@gmail.com">EMAIL</a>
+                    <a href="https://github.com/ChinaLad">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/username/">LINKEDIN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="../prism.js"></script>
+    <script>
+        // Simple function to trigger KaTeX on the page
+        function renderMath() {
+            document.querySelectorAll('.math-display').forEach(el => {
+                katex.render(el.textContent, el, { throwOnError: false, displayMode: true });
+            });
+        }
+    </script>
+</body>
+</html>
